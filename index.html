@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BYC | Verona | Bangladesh</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- 1. COLORS --- */
+        :root {
+            --primary: #006A4E;       /* BD Green */
+            --secondary: #F42A41;     /* BD Red */
+            --dark: #1E293B;          /* Dark Text */
+            --light: #F8FAFC;         /* Light Background */
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.95);
+        }
+
+        /* --- 2. BASICS --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        body.lang-bn { font-family: 'Hind Siliguri', sans-serif; }
+        img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        a { text-decoration: none; transition: 0.3s ease; }
+
+        /* --- 3. HEADER & NAV --- */
+        header {
+            position: fixed; top: 0; left: 0; width: 100%; height: 90px;
+            background: transparent; z-index: 1000;
+            display: flex; align-items: center; transition: all 0.4s ease;
+        }
+        header.scrolled {
+            background: var(--glass); backdrop-filter: blur(10px); height: 75px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+
+        .logo { 
+            display: flex; align-items: center; gap: 15px; font-size: 1.4rem; font-weight: 800; 
+            color: var(--white); text-shadow: 0 2px 10px rgba(0,0,0,0.5); letter-spacing: -0.5px; transition: 0.3s;
+        }
+        header.scrolled .logo { color: var(--primary); text-shadow: none; }
+        .logo-img-wrapper {
+            width: 60px; height: 60px; background: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 15px rgba(255,255,255,0.6); transition: 0.3s;
+        }
+        .logo img { width: 90%; height: 90%; object-fit: contain; }
+        header.scrolled .logo-img-wrapper { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+        .nav-menu { display: flex; gap: 25px; list-style: none; align-items: center; }
+        .nav-link { 
+            color: white; font-weight: 600; font-size: 0.95rem; position: relative; 
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        header.scrolled .nav-link { color: var(--dark); text-shadow: none; }
+        .nav-link:hover { color: var(--secondary); }
+
+        .lang-switch { display: flex; background: rgba(255,255,255,0.25); padding: 4px; border-radius: 30px; margin-left: 15px; }
+        header.scrolled .lang-switch { background: #eee; }
+        .lang-btn {
+            border: none; background: transparent; padding: 6px 12px; border-radius: 20px;
+            font-size: 0.8rem; font-weight: 700; cursor: pointer; color: white; transition: 0.3s;
+        }
+        header.scrolled .lang-btn { color: #666; }
+        .lang-btn.active { background: var(--secondary); color: white !important; }
+
+        .mobile-toggle { display: none; font-size: 1.8rem; color: white; cursor: pointer; }
+        header.scrolled .mobile-toggle { color: var(--dark); }
+
+        /* --- 4. HERO SECTION --- */
+        .hero {
+            position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; color: white; padding: 100px 20px 150px 20px;
+        }
+        .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        .hero-bg::after {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 106, 78, 0.8) 100%);
+        }
+        .hero-content { z-index: 2; max-width: 900px; animation: fadeInUp 1s ease; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; text-shadow: 0 5px 20px rgba(0,0,0,0.5); }
+        .btn { display: inline-block; padding: 15px 40px; border-radius: 50px; font-weight: 700; text-transform: uppercase; border: none; cursor: pointer; margin: 5px; }
+        .btn-primary { background: var(--secondary); color: white; box-shadow: 0 10px 20px rgba(244, 42, 65, 0.4); }
+        .btn-primary:hover { background: #d01025; transform: translateY(-3px); }
+        .btn-fb { background: #1877F2; color: white; box-shadow: 0 10px 20px rgba(24, 119, 242, 0.4); }
+        .btn-fb:hover { background: #145dbf; transform: translateY(-3px); }
+
+        .custom-shape-divider-bottom {
+            position: absolute; bottom: 0; left: 0; width: 100%; overflow: hidden; line-height: 0; transform: rotate(180deg);
+        }
+        .custom-shape-divider-bottom svg { position: relative; display: block; width: calc(100% + 1.3px); height: 100px; }
+        .custom-shape-divider-bottom .shape-fill { fill: var(--light); }
+
+        /* --- 5. SERVICES & GENERAL SECTION STYLES --- */
+        .section-padding { 
+            padding: 30px 0; 
+            scroll-margin-top: 100px; /* <--- THIS FIXES THE ISSUE */
+        }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 10px; }
+        .divider { width: 80px; height: 5px; background: var(--secondary); margin: 0 auto; border-radius: 5px; }
+        
+        .services-list {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 30px;
+            background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        }
+        .service-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; }
+        .service-item i { color: var(--secondary); font-size: 1.2rem; margin-top: 5px; min-width: 25px; }
+
+        /* --- 6. ACCORDION (LAWS) --- */
+        .accordion { max-width: 900px; margin: 0 auto; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .acc-item { border-bottom: 1px solid #f0f0f0; }
+        .acc-header {
+            padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+            font-weight: 600; font-size: 1.1rem; transition: 0.3s;
+        }
+        .acc-header:hover { background: #f9f9f9; color: var(--primary); }
+        .acc-body { max-height: 0; overflow: hidden; transition: all 0.4s ease; background: #fafafa; padding: 0 25px; opacity: 0; }
+        .acc-item.active .acc-body { max-height: 500px; padding: 25px; opacity: 1; border-top: 1px solid #eee; }
+        .acc-item.active .acc-header { background: var(--primary); color: white; }
+
+        /* --- 7. ACTIVITIES (Cards) --- */
+        .activity-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; 
+        }
+        .activity-card {
+            background: white; padding: 40px 30px; border-radius: 20px; text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.4s ease; 
+            position: relative; overflow: hidden; border: 1px solid #f0f0f0; z-index: 1;
+        }
+        .activity-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0, 106, 78, 0.15); }
+        .activity-card::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 4px;
+            background: linear-gradient(90deg, #006A4E, #F42A41); 
+            transform: scaleX(0); transform-origin: left; transition: 0.4s;
+        }
+        .activity-card:hover::after { transform: scaleX(1); }
+        .act-icon-box { 
+            width: 80px; height: 80px; margin: 0 auto 25px; background: #e8f5e9; color: #006A4E;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center; 
+            font-size: 2.2rem; transition: 0.5s;
+        }
+        .activity-card:hover .act-icon-box { background: #006A4E; color: white; transform: rotateY(360deg); }
+        .activity-card h3 { font-size: 1.3rem; margin-bottom: 10px; color: #1E293B; font-weight: 700; }
+        .activity-card p { color: #64748b; font-size: 0.95rem; line-height: 1.6; }
+
+        /* --- 8. GALLERY GRID (Tours & Events) --- */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px; }
+        .gallery-item {
+            position: relative; height: 250px; border-radius: 15px; overflow: hidden; cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;
+        }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0, 106, 78, 0.2); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-overlay {
+            position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px;
+            background: linear-gradient(to top, rgba(0, 106, 78, 0.9), transparent);
+            color: white; font-size: 0.95rem; transform: translateY(100%); transition: transform 0.3s ease; text-align: left;
+        }
+        .gallery-item:hover .gallery-overlay { transform: translateY(0); }
+        .gallery-overlay strong { font-size: 1.1rem; color: #ffda79; display: block; margin-bottom: 5px; }
+
+        /* --- 9. TEAM CARDS --- */
+        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card-box {
+            background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center; transition: 0.3s; border: 1px solid #f0f0f0; display: flex; flex-direction: column;
+        }
+        .card-box:hover { transform: translateY(-7px); box-shadow: 0 20px 40px rgba(0, 106, 78, 0.15); }
+        .img-box { width: 100%; height: 350px; background: #e2e8f0; position: relative; overflow: hidden; }
+        .img-box img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: 0.5s; }
+        .card-box:hover .img-box img { transform: scale(1.05); }
+        .card-info { padding: 25px; background: white; flex-grow: 1; }
+        .card-title { color: #1E293B; font-weight: 800; margin-bottom: 5px; font-size: 1.3rem; }
+        .card-role { color: #006A4E; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; margin-bottom: 15px; display: block; letter-spacing: 1px; }
+        .card-btn {
+            display: inline-flex; width: 45px; height: 45px; align-items: center; justify-content: center;
+            background: #e8f5e9; color: #25d366; border-radius: 50%; font-size: 1.5rem; transition: 0.3s; text-decoration: none;
+        }
+        .card-btn:hover { background: #25d366; color: white; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4); }
+
+        /* --- 10. EXCEL/SPREADSHEET WRAPPER --- */
+        .excel-wrapper {
+            width: 100%; max-width: 850px; margin: 0 auto; height: 280px; 
+            background: white; border-radius: 16px; box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1); 
+            border: 1px solid rgba(0,0,0,0.05); position: relative; overflow: hidden;
+        }
+        .excel-frame {
+            width: 100%; height: 1000px; border: none; display: block; 
+            pointer-events: none; margin-top: -2px;
+        }
+        .fade-bottom {
+            position: absolute; bottom: 0; left: 0; width: 100%; height: 60px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 90%);
+            pointer-events: none;
+        }
+
+        /* --- 11. FOOTER & CONTACT FORM --- */
+        footer { background: var(--dark); color: #cbd5e1; padding: 60px 0 20px; text-align: center; }
+        .contact-layout {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 40px; 
+            text-align: left; margin-bottom: 40px;
+        }
+        .suggestion-form {
+            background: rgba(255, 255, 255, 0.05); padding: 30px; 
+            border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);
+        }
+        .suggestion-form h3 { color: white; margin-bottom: 20px; font-size: 1.2rem; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; color: #ccc; margin-bottom: 5px; font-size: 0.9rem; }
+        .form-control {
+            width: 100%; padding: 12px; border-radius: 8px; border: none; 
+            background: #f0f2f5; color: #333; font-family: inherit;
+        }
+        .form-control:focus { outline: 2px solid var(--primary); }
+        .btn-send {
+            background: var(--primary); color: white; border: none; padding: 12px 30px; 
+            border-radius: 50px; cursor: pointer; font-weight: 700; width: 100%; transition: 0.3s;
+        }
+        .btn-send:hover { background: white; color: var(--primary); }
+        
+        .contact-info-side { text-align: center; }
+        .map-frame {
+            width: 100%; height: 250px; border-radius: 15px; overflow: hidden; 
+            margin-bottom: 20px; border: 2px solid rgba(255,255,255,0.1);
+        }
+        .footer-social a { 
+            display: inline-block; width: 45px; height: 45px; line-height: 45px; 
+            border-radius: 50%; background: rgba(255,255,255,0.1); color: white; 
+            margin: 0 8px; font-size: 1.2rem; transition: 0.3s;
+        }
+        .footer-social a:hover { background: var(--primary); }
+        .whatsapp-float {
+            position: fixed; bottom: 30px; right: 30px; width: 45px; height: 45px;
+            background: #25d366; color: white; border-radius: 50%; font-size: 30px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2); z-index: 2000;
+        }
+
+        /* --- 12. RESPONSIVE MEDIA QUERIES --- */
+        @media (max-width: 768px) {
+            .mobile-toggle { display: block; }
+            .nav-menu {
+                position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: var(--primary);
+                flex-direction: column; justify-content: center; z-index: -1;
+                transform: translateX(100%); transition: 0.3s;
+            }
+            .nav-menu.active { transform: translateX(0); }
+            .hero h1 { font-size: 2.5rem; }
+            .services-list { grid-template-columns: 1fr; }
+            .contact-layout { grid-template-columns: 1fr; }
+            
+            
+        }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <a href="https://chat.whatsapp.com/DJzLJngH1Vv6mt8JoN3rig?mode=gi_t" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <header id="main-header">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">
+                <div class="logo-img-wrapper">
+                    <img src="images/logo.png" alt="Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-users\' style=\'color:var(--primary); font-size:1.5rem;\'></i>'">
+                </div>
+                <div>
+                <div data-i18n="logo_top">BANGLADESH YOUTH</div>
+                <div style="font-size: 0.8em; opacity: 0.9;" data-i18n="logo_sub">COMMUNITY VERONA</div>
+                </div>
+            </a>
+
+            <div class="mobile-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link" onclick="toggleMenu()" data-i18n="nav_home">Home</a>
+                <a href="#services" class="nav-link" onclick="toggleMenu()" data-i18n="nav_services">Services</a>
+                <a href="#laws" class="nav-link" onclick="toggleMenu()" data-i18n="nav_laws">Laws</a>
+                <a href="#events" class="nav-link" onclick="toggleMenu()" data-i18n="nav_events">Activities</a>
+                <a href="#team" class="nav-link" onclick="toggleMenu()" data-i18n="nav_team">Teams</a>
+                <a href="#contact" class="nav-link" onclick="toggleMenu()" data-i18n="nav_contact">Contact</a>
+                <div class="lang-switch">
+                    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+                    <button class="lang-btn" onclick="setLang('it')">IT</button>
+                    <button class="lang-btn" onclick="setLang('bn')">BN</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <img src="images/hero-bg.jpg" alt="Background" onerror="this.style.display='none'">
+        </div>
+        <div class="hero-content">
+            <div style="margin-bottom: 20px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Estd. 30 July 2024</div>
+            <h1 data-i18n="hero_title">Unity. Service to Humanity. Rights.</h1>
+            <p data-i18n="hero_desc">Bangladesh Youth Community Verona, Italy</p>
+            <a href="#services" class="btn btn-primary" data-i18n="btn_services">Our Services</a>
+            <a href="https://www.facebook.com/people/%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%A6%E0%A7%87%E0%A6%B6-%E0%A6%AF%E0%A7%81%E0%A6%AC-%E0%A6%AE%E0%A6%BF%E0%A6%89%E0%A6%A8%E0%A6%BF%E0%A6%9F%E0%A6%BF-%E0%A6%AD%E0%A7%87%E0%A6%B0%E0%A7%8B%E0%A6%A8%E0%A6%BE%E0%A6%87%E0%A6%A4%E0%A6%BE%E0%A6%B2%E0%A6%BF/61561360354384/" target="_blank" class="btn btn-fb">
+                <i class="fab fa-facebook"></i> <span data-i18n="btn_join">Join Facebook</span>
+            </a>
+        </div>
+        <div class="custom-shape-divider-bottom">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <section class="section-padding" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="serv_title">Organizational Services</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="services-list">
+                <div>
+                    <div class="service-item"><i class="fas fa-check-circle"></i><div><h4 data-i18n="serv_1_t">Free Interpretation</h4><p data-i18n="serv_1_d">Free interpreter/translator for official work.</p></div></div>
+                    <div class="service-item"><i class="fas fa-check-circle"></i><div><h4 data-i18n="serv_2_t">Appointments</h4><p data-i18n="serv_2_d">Help getting official appointments.</p></div></div>
+                    <div class="service-item"><i class="fas fa-check-circle"></i><div><h4 data-i18n="serv_3_t">Job Search</h4><p data-i18n="serv_3_d">Finding jobs for Verona expat Bangladeshis.</p></div></div>
+                    <div class="service-item"><i class="fas fa-check-circle"></i><div><h4 data-i18n="serv_4_t">Accommodation</h4><p data-i18n="serv_4_d">Finding houses or seats for living.</p></div></div>
+                    <div class="service-item"><i class="fas fa-check-circle"></i><div><h4 data-i18n="serv_5_t">Newcomers Help</h4><p data-i18n="serv_5_d">Helping new expat Bangladeshis settle in.</p></div></div>
+                    <div class="service-item"><i class="fas fa-check-circle"></i><div><h4 data-i18n="serv_9_t">Information</h4><p data-i18n="serv_9_d">Search for a lawyer for any information and legal matters.</p></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="activities" style="background: #fdfdfd; position: relative;">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="event_title">Our Activities</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="activity-grid">
+                <div class="activity-card">
+                    <div class="act-icon-box"><i class="fas fa-running"></i></div>
+                    <h3 data-i18n="act_2">Sports</h3>
+                    <p data-i18n="act_2_d">Arranged sports every Tuesday for recreation.</p>
+                </div>
+                <div class="activity-card">
+                    <div class="act-icon-box"><i class="fas fa-plane-departure"></i></div>
+                    <h3 data-i18n="act_4">Tours & Picnics</h3>
+                    <p data-i18n="act_4_d">Arranging tours inside and outside Italy.</p>
+                </div>
+                <div class="activity-card">
+                    <div class="act-icon-box"><i class="fas fa-bullhorn"></i></div>
+                    <h3 data-i18n="act_5">Rights Movements</h3>
+                    <p data-i18n="act_5_d">Protests and movements for expatriate rights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="laws" style="background: #f1f5f9;">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="law_title">Constitution Highlights</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="accordion">
+                <div class="acc-item" onclick="toggleAcc(this)">
+                    <div class="acc-header"><span data-i18n="art_1_t">Identity</span><i class="fas fa-plus"></i></div>
+                    <div class="acc-body" data-i18n="art_1_d">Name: Bangladesh Youth Community Verona. Estd: 30 July 2024. Office: Verona City.</div>
+                </div>
+                <div class="acc-item" onclick="toggleAcc(this)">
+                    <div class="acc-header"><span data-i18n="art_2_t">Principles</span><i class="fas fa-plus"></i></div>
+                    <div class="acc-body" data-i18n="art_2_d">To increase brotherhood, perform social welfare, preserve culture, and dignify the community.</div>
+                </div>
+                <div class="acc-item" onclick="toggleAcc(this)">
+                    <div class="acc-header"><span data-i18n="art_3_t">Constitution</span><i class="fas fa-plus"></i></div>
+                    <div class="acc-body" data-i18n="art_3_d">To establish strong social bonds and a sense of brotherhood among all Bangladeshi youth living in Verona, Italy, regardless of religion, caste, tribe, and political ideology.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="events" style="background: #fdfdfd;">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: #006A4E;">Tours & Trips</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/act2.jpg" alt="Pisa Tour" onerror="this.src='https://via.placeholder.com/400x300?text=Pisa+Tour'">
+                    <div class="gallery-overlay">
+                        <strong>August 13, 2024</strong><br>
+                        Summer Pleasure Trip: Pisa city and Viareggio sul Mare
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/act3.jpg" alt="Winter Trip" onerror="this.src='https://via.placeholder.com/400x300?text=Corvara+Trip'">
+                    <div class="gallery-overlay">
+                        <strong>January 14, 2025</strong><br>
+                        Winter Snow Trip: CORVARA IN BADIA
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/act4.jpg" alt="Genova Tour" onerror="this.src='https://via.placeholder.com/400x300?text=Genova+Tour'">
+                    <div class="gallery-overlay">
+                        <strong>June 17, 2025</strong><br>
+                        Summer Trip: Genova City and Portofino Sul Mare
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/act5.jpg" alt="Varone Tour" onerror="this.src='https://via.placeholder.com/400x300?text=Cascate+Varone'">
+                    <div class="gallery-overlay">
+                        <strong>September 2, 2025</strong><br>
+                        Pleasure Trip: Cascate del Varone and Lago di Molveno
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/act6.jpg" alt="Grill Party" onerror="this.src='https://via.placeholder.com/400x300?text=Grill+Party'">
+                    <div class="gallery-overlay">
+                        <strong>September 9, 2025</strong><br>
+                        Daylong Grill-Party and Sports: Ma - Museo Africano
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/act7.jpg" alt="Cortina Tour" onerror="this.src='https://via.placeholder.com/400x300?text=Cortina'">
+                    <div class="gallery-overlay">
+                        <strong>December 28, 2025</strong><br>
+                        Winter Snow Trip: Cortina d'Ampezzo
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/act8.jpg" alt="Cerreto Tour" onerror="this.src='https://via.placeholder.com/400x300?text=Cerreto'">
+                    <div class="gallery-overlay">
+                        <strong>January 13, 2026</strong><br>
+                        Winter Snow Trip: Cerreto Laghi
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="events" style="background: white;">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: #006A4E;">Community Events</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/iftar.jpg" alt="Iftar 2024" onerror="this.src='https://via.placeholder.com/400x300?text=Iftar+2024'">
+                    <div class="gallery-overlay">
+                        <strong>April 02, 2024</strong><br>
+                        Iftar Mahfil
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <a href="https://www.larena.it//territorio-veronese/citta/bangladesh-studenti-uccisi-solidariet%c3%a0-verona-1.12394393?fbclid=IwRlRTSAPnIhdleHRuA2FlbQIxMABzcnRjBmFwcF9pZAo2NjI4NTY4Mzc5AAEevjY3ArvD8SGKcfQrBWCATxxprKWo99tgYtdX8pmE6p--qbOq8yG_a58gJ9k_aem_aA6jkzC2sa6YOWrwPYNP2A" target="_blank" style="display: block; text-decoration: none; color: white; height: 100%;">
+                        <img src="images/july2.jpg" alt="Protest" onerror="this.src='https://via.placeholder.com/400x300?text=July+Rally'">
+                        <div class="gallery-overlay">
+                            <strong>July 23, 2024</strong><br>
+                            Solidarity Rally: Support for Quota Reform Movement
+                        </div>
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/iftar2.jpg" alt="Iftar 2025" onerror="this.src='https://via.placeholder.com/400x300?text=Iftar+2025'">
+                    <div class="gallery-overlay">
+                        <strong>March 18, 2025</strong><br>
+                        Iftar Mahfil Gathering
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/iftar3.jpg" alt="Iftar 2025" onerror="this.src='https://via.placeholder.com/400x300?text=Iftar+2025'">
+                    <div class="gallery-overlay">
+                        <strong>August 20, 2024</strong><br>
+                        Free Islamic education program is ongoing
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="team" style="background: #fdfdfd;">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: #006A4E;">Our Sports Teams</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/crick.jpg" alt="Cricket Team" onerror="this.src='https://via.placeholder.com/400x300?text=Cricket+Team'">
+                    <div class="gallery-overlay">
+                        <strong>BYC Cricket Team</strong><br>
+                        Champions of Unity
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/foot.jpg" alt="Football Team" onerror="this.src='https://via.placeholder.com/400x300?text=Football+Team'">
+                    <div class="gallery-overlay">
+                        <strong>BYC Football Team</strong><br>
+                        Verona Strikers
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section-padding" id="excel-data" style="background: #F8FAFC;">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 40px;">
+                <h2 style="color: #006A4E; font-weight: 800; letter-spacing: -0.5px;">Live Service Data</h2>
+                <div class="divider"></div>
+                <p style="margin-top:10px; color:#64748b; font-size: 1.05rem;">
+                    A real-time transparency snapshot from our official records.
+                </p>
+            </div>
+        
+            <div class="excel-wrapper">
+                <iframe 
+                    src="https://docs.google.com/spreadsheets/d/1-Q3ZGXGaMgROt_I0xZ5XT8DRSFkeafiL2YAzvPFWiyU/preview?widget=false&headers=false&chrome=false" 
+                    class="excel-frame">
+                </iframe>
+                <div class="fade-bottom"></div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://docs.google.com/spreadsheets/d/1-Q3ZGXGaMgROt_I0xZ5XT8DRSFkeafiL2YAzvPFWiyU/edit?usp=sharing" target="_blank" 
+                   class="btn" 
+                   style="display: inline-flex; align-items: center; gap: 10px; background: #006A4E; color: white; padding: 12px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.95rem; box-shadow: 0 10px 20px rgba(0, 106, 78, 0.25);">
+                    <i class="fas fa-table"></i> View Services Data
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="community-members" style="background: #F8FAFC;">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 40px;">
+                <h2 style="color: #006A4E; font-weight: 800; letter-spacing: -0.5px;">Community Members</h2>
+                <div class="divider"></div>
+                <p style="margin-top:10px; color:#64748b; font-size: 1.05rem;">
+                    A real-time transparency snapshot from our official Members.
+                </p>
+            </div>
+            
+            <div class="excel-wrapper">
+                <iframe 
+                    src="https://docs.google.com/spreadsheets/d/1-UcdlJPHGXRIjGL5gkkzt-s4jV8_OqKGb2EY7sTQHac/preview?widget=false&headers=false&chrome=false" 
+                    class="excel-frame">
+                </iframe>
+                <div class="fade-bottom"></div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://docs.google.com/spreadsheets/d/1-UcdlJPHGXRIjGL5gkkzt-s4jV8_OqKGb2EY7sTQHac/edit?usp=sharing" target="_blank" 
+                   class="btn" 
+                   style="display: inline-flex; align-items: center; gap: 10px; background: #006A4E; color: white; padding: 12px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.95rem; box-shadow: 0 10px 20px rgba(0, 106, 78, 0.25);">
+                    <i class="fas fa-table"></i> View Community Members
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="founders" style="background: #F8FAFC;">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 40px;">
+                <h2 style="color: #006A4E; font-weight: 800; letter-spacing: -0.5px;">Initiative Founders</h2>
+                <div class="divider"></div>
+                <p style="margin-top:10px; color:#64748b; font-size: 1.05rem;">
+                    আজকের "বাংলাদেশ যুব কমিউনিটি ভেরোনা,ইতালি" যাঁদের অক্লান্ত শ্রম, অর্থ সহযোগিতা, ত্যাগ, শত কর্মব্যস্ততার মাঝেও সময় দিয়ে এই স্বপ্নের সংগঠন প্রতিষ্ঠা করা হয়েছে। পরবর্তী নেতৃত্ব এবং পরবর্তী প্রজন্মের কাছে স্মরণীয় করে রাখতে তাদের নাম তুলে ধরা হলো। 
+                </p>
+            </div>
+            
+            <div class="excel-wrapper">
+                <iframe 
+                    src="https://docs.google.com/spreadsheets/d/108J7zYmz6Z2jN5zeM2mBdOe9V0aBmEWwsgRmdWXvygI/preview?widget=false&headers=false&chrome=false" 
+                    class="excel-frame">
+                </iframe>
+                <div class="fade-bottom"></div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="https://docs.google.com/spreadsheets/d/108J7zYmz6Z2jN5zeM2mBdOe9V0aBmEWwsgRmdWXvygI/edit?usp=sharing" target="_blank" 
+                   class="btn" 
+                   style="display: inline-flex; align-items: center; gap: 10px; background: #006A4E; color: white; padding: 12px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.95rem; box-shadow: 0 10px 20px rgba(0, 106, 78, 0.25);">
+                    <i class="fas fa-table"></i> View Initiative Founder Members
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="team_title">Contacts & Executive Council</h2>
+                <div class="divider"></div>
+            </div>
+            
+            <div class="grid-cards">
+                <div class="card-box">
+                    <div class="img-box">
+                        <img src="images/president.jpg" alt="President" onerror="this.src='https://via.placeholder.com/400x500?text=President'">
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title">Md Jibon Ahmmed</div>
+                        <span class="card-role" data-i18n="role_pres">President</span>
+                        <a href="https://wa.me/393246118481" target="_blank" class="card-btn"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="card-box">
+                    <div class="img-box">
+                        <img src="images/gensec.jpg" alt="GS" onerror="this.src='https://via.placeholder.com/400x500?text=Gen+Secretary'">
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title">Sojol Bepari</div>
+                        <span class="card-role" data-i18n="role_gs">General Secretary</span>
+                        <a href="https://wa.me/393701025685" target="_blank" class="card-btn"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="card-box">
+                    <div class="img-box">
+                        <img src="images/orgsec.jpg" alt="Org Sec" onerror="this.src='https://via.placeholder.com/400x500?text=Org+Secretary'">
+                    </div>
+                    <div class="card-info">
+                        <div class="card-title">Joy Ahmed</div>
+                        <span class="card-role" data-i18n="role_org">Org. Secretary</span>
+                        <a href="https://wa.me/393808659413" target="_blank" class="card-btn"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 50px;">
+                <div class="divider" style="background: rgba(255,255,255,0.3);"></div>
+            </div>
+        
+            <div class="contact-layout">
+                <div class="suggestion-form">
+                    <h3 data-i18n="form_head">Any Query</h3>
+                    <form onsubmit="sendToWhatsapp(event)">
+                        <div class="form-group">
+                            <label data-i18n="form_name">Your Name</label>
+                            <input type="text" id="wa_name" class="form-control" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="form_msg">Suggestion / Message</label>
+                            <textarea id="wa_message" rows="4" class="form-control" placeholder="Write here..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-send" style="background: #25d366; color: white; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                            <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> Send a message
+                        </button>
+                    </form>
+                </div>
+
+                <div class="contact-info-side">
+                    <div class="map-frame">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d89552.74862660126!2d10.920807567844053!3d45.42637774136653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477f5f68699be0e3%3A0x53f85a636882595b!2sVerona%2C%20Province%20of%20Verona%2C%20Italy!5e0!3m2!1sen!2sbd!4v1700000000000!5m2!1sen!2sbd" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/people/%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%A6%E0%A7%87%E0%A6%B6-%E0%A6%AF%E0%A7%81%E0%A6%AC-%E0%A6%AE%E0%A6%BF%E0%A6%89%E0%A6%A8%E0%A6%BF%E0%A6%9F%E0%A6%BF-%E0%A6%AD%E0%A7%87%E0%A6%B0%E0%A7%8B%E0%A6%A8%E0%A6%BE%E0%A6%87%E0%A6%A4%E0%A6%BE%E0%A6%B2%E0%A6%BF/61561360354384/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://chat.whatsapp.com/DJzLJngH1Vv6mt8JoN3rig?mode=gi_t" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+
+                    <p style="color: #ccc; margin-top: 15px;">
+                        <i class="fas fa-envelope"></i> <a href="mailto:cgdb.verona@gmail.com" style="color: white; text-decoration: none;">cgdb.verona@gmail.com</a>
+                    </p>
+                    <p style="color: #ccc;">Verona, Italy</p>
+                </div>
+            </div>
+
+            <p style="font-size: 0.8rem; margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+                © 2026 Bangladesh Youth Community Verona, Italy
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Effect
+        window.addEventListener("scroll", function() {
+            var header = document.getElementById("main-header");
+            if (window.scrollY > 50) header.classList.add("scrolled");
+            else header.classList.remove("scrolled");
+        });
+        function toggleMenu() { document.getElementById('nav-menu').classList.toggle('active'); }
+        function toggleAcc(el) {
+            document.querySelectorAll('.acc-item').forEach(item => { if(item !== el) item.classList.remove('active'); });
+            el.classList.toggle('active');
+        }
+        
+        // WhatsApp Function
+        function sendToWhatsapp(e) {
+            e.preventDefault(); // Stops the page from reloading
+
+            // 1. Get Values
+            var name = document.getElementById('wa_name').value;
+            var message = document.getElementById('wa_message').value;
+
+            // 2. President's Phone Number
+            var phoneNumber = "393500225095"; 
+
+            // 3. Create the Message Text
+            var fullText = "*Name:* " + name + "\n" +
+                           "*Message:* " + message;
+                           
+            // 4. Open WhatsApp
+            var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(fullText);
+            window.open(url, '_blank');
+        }
+
+        const langData = {
+            en: {
+                nav_home: "Home", nav_services: "Services", nav_laws: "Laws", nav_team: "Teams", nav_events: "Activities", nav_contact: "Contact",
+                hero_title: "Unity. Service to Humanity. Rights.", hero_desc: "Expatriate Welfare Organization. Helping Bangladeshis in Verona.",
+                btn_services: "Our Services", btn_join: "Join Group",
+                serv_title: "Organizational Services",
+                serv_1_t: "Interpretation", serv_1_d: "Free interpreter for official work.",
+                serv_2_t: "Appointments", serv_2_d: "Help getting official appointments.",
+                serv_3_t: "Job Search", serv_3_d: "Finding jobs for expat Bangladeshis.",
+                serv_4_t: "Accommodation", serv_4_d: "Finding houses or seats.",
+                serv_5_t: "Newcomers", serv_5_d: "Helping new expats settle.",
+                serv_9_t: "Information", serv_9_d: "Search for a lawyer for any information and legal matters.",
+                law_title: "Constitution Highlights",
+                art_1_t: "Identity", art_1_d: "Name: Bangladesh Youth Community Verona. Est: 30 July 2024. Office: Verona City.",
+                art_2_t: "Principles", art_2_d: "Social values, brotherhood, humanitarian aid, cooperation and performing public welfare work.",
+                art_3_t: "Constitution", art_3_d: "To establish strong social bonds and a sense of brotherhood among all Bangladeshi youth living in Verona, Italy, regardless of religion, caste, tribe, and political ideology.",
+                art_4_t: "Structure", art_4_d: "Executive Council (16 posts), Advisory, Honorary.",
+                art_5_t: "Duties", art_5_d: "President (Executive), GS (Admin), Treasurer (Finance).",
+                art_8_t: "Finance & Discipline", art_8_d: "Bank transactions. No politics.",
+                art_14_t: "Membership", art_14_d: "Fees 15th-20th. Attendance mandatory.",
+                art_15_t: "Article 15: Leadership", art_15_d: "Leadership change based on merit and democracy. Leaders must pay fees and maintain unity.",
+                team_title: "Executive Council", role_pres: "President", role_gs: "Gen. Secretary", role_org: "Org. Secretary",
+                event_title: "Our Activities", contact_title: "Contact Us",
+                act_2: "Sports", act_2_d: "Arranged sports every Tuesday for recreation.",
+                act_4: "Tours & Picnics", act_4_d: "Arranging tours inside and outside Italy.",
+                act_5: "Rights Movements", act_5_d: "Protests and movements for expatriate rights.",
+                contact_title: "Contact & Suggestions",
+                form_head: "Send us a Message",
+                form_name: "Your Name",
+                form_email: "Your Email",
+                form_msg: "Suggestion / Message",
+                form_btn: "Send Message",
+                logo_top: "BANGLADESH YOUTH",
+                logo_sub: "COMMUNITY VERONA",
+            },
+            it: {
+                nav_home: "Home", nav_services: "Servizi", nav_laws: "Statuto", nav_team: "Squadra", nav_events: "attivita", nav_contact: "Contatti",
+                hero_title: "Unità. Servizio. Diritti.", hero_desc: "Comunità Giovanile del Bangladesh Verona, Italia",
+                btn_services: "Servizi", btn_join: "Unisciti",
+                serv_title: "Servizi",
+                serv_1_t: "Interpretazione", serv_1_d: "Interprete gratuito per lavori ufficiali.",
+                serv_2_t: "Appuntamenti", serv_2_d: "Aiuto per appuntamenti.",
+                serv_3_t: "Lavoro", serv_3_d: "Ricerca lavoro per bangladesi.",
+                serv_4_t: "Alloggio", serv_4_d: "Trovare case o posti letto.",
+                serv_5_t: "Nuovi Arrivati", serv_5_d: "Aiuto nuovi espatriati.",
+                serv_9_t: "Informazioni", serv_9_d: "Cerca un avvocato per qualsiasi informazione e questione legale.",
+                law_title: "Punti Salienti Statuto",
+                art_1_t: "Identità", art_1_d: "Nome: Comunità Giovanile del Bangladesh Verona.",
+                art_2_t: "Principi", art_2_d: "Valori sociali, fratellanza, aiuto umanitario, cooperazione e svolgimento di attività di pubblica utilità.",
+                art_3_t: "Costituzione", art_3_d: "Creare forti legami sociali e un senso di fratellanza tra tutti i giovani bengalesi che vivono a Verona, in Italia, indipendentemente da religione, casta, tribù e ideologia politica.",
+                art_4_t: "AStruttura", art_4_d: "Consiglio Esecutivo (16 posti).",
+                art_5_t: "Doveri", art_5_d: "Presidente, Segretario.",
+                art_8_t: "Finanza", art_8_d: "Transazioni bancarie.",
+                art_14_t: "Iscrizione", art_14_d: "Quote 15-20 del mese.",
+                art_15_t: "Articolo 15: Leadership", art_15_d: "Cambio di leadership basato sul merito.",
+                team_title: "Consiglio Esecutivo", role_pres: "Presidente", role_gs: "Segretario", role_org: "Segretario Org.",
+                event_title: "Le Nostre Attività", contact_title: "Contattaci",
+                act_2: "Sport", act_2_d: "Organizzato ogni martedì.",
+                act_3: "Giornate Nazionali", act_3_d: "Celebrazione delle giornate nazionali del Bangladesh.",
+                act_4: "Tour e Picnic", act_4_d: "Organizzazione di tour dentro e fuori l'Italia.",
+                act_5: "Diritti", act_5_d: "Proteste e movimenti per i diritti degli espatriati.",
+                contact_title: "Contatti e Suggerimenti",
+                form_head: "Inviaci un messaggio",
+                form_name: "Il tuo nome",
+                form_email: "La tua email",
+                form_msg: "Suggerimento / Messaggio",
+                form_btn: "Invia Messaggio",
+                logo_top: "GIOVANI BANGLADESI",
+                logo_sub: "COMUNITÀ VERONA",
+            },
+            bn: {
+                nav_home: "হোম", nav_services: "সেবা", nav_laws: "সংবিধান", nav_team: "দল", nav_events: "কার্যক্রম", nav_contact: "যোগাযোগ",
+                hero_title: "একতা। মানবসেবা। অধিকার।", hero_desc: "বাংলাদেশ যুব কমিউনিটি ভেরোনা, ইতালি।",
+                btn_services: "আমাদের সেবা", btn_join: "যোগ দিন",
+                serv_title: "সাংগঠনিক সেবা",
+                serv_1_t: "দোভাষী", serv_1_d: "বিনামূল্যে দোভাষী সুবিধা।",
+                serv_2_t: "অ্যাপয়েন্টমেন্ট", serv_2_d: "অফিসিয়াল Appointment সাহায্য।",
+                serv_3_t: "কাজের সন্ধান", serv_3_d: "বাংলাদেশিদের জন্য কাজের সন্ধান।",
+                serv_4_t: "বাসস্থান", serv_4_d: "বাসা বা সিটের সন্ধান।",
+                serv_5_t: "নতুন প্রবাসী", serv_5_d: "নতুন প্রবাসীদের সাহায্য।",
+                serv_9_t: "তথ্য", serv_9_d: "যেকোনো তথ্য ও আইন বিষয় উকিলের সন্ধান।",
+                law_title: "সংবিধানের প্রধান বিষয়",
+                art_1_t: "পরিচয়", art_1_d: "নাম: বাংলাদেশ যুব কমিউনিটি ভেরোনা।",
+                art_2_t: "মূলনীতি", art_2_d: "সামাজিক মূল্যবোধ, ভ্রাতৃত্ব, মানবিক সহায়তা, সহযোগিতা এবং জনকল্যাণ মূলক কাজ সম্পাদন।",
+                art_3_t: "গঠনতন্ত্র", art_3_d: "ইতালির ভেরোনায় বসবাসরত সকল বাংলাদেশী যুবদের মধ্যে ধর্ম, বর্ণ, গোত্র ও রাজনৈতিক মতাদর্শ নির্বিশেষে সুদৃঢ় সামাজিক বন্ধন ও ভ্রাতৃত্ববোধ প্রতিষ্ঠা করা।",
+                art_4_t: "কাঠামো", art_4_d: "কার্যকরী পরিষদ (১৬ পদ)।",
+                art_5_t: "দায়িত্ব", art_5_d: "সভাপতি, সাধারণ সম্পাদক।",
+                art_8_t: "অর্থ ও শৃঙ্খলা", art_8_d: "ব্যাংক লেনদেন।",
+                art_14_t: "সদস্যপদ", art_14_d: "ফি ১৫-২০ তারিখ।",
+                art_15_t: "অনুচ্ছেদ ১৫: নেতৃত্ব", art_15_d: "মেধার ভিত্তিতে নেতৃত্ব পরিবর্তন।",
+                team_title: "কার্যকরী পরিষদ", role_pres: "সভাপতি", role_gs: "সাধারণ সম্পাদক", role_org: "সাংগঠনিক সম্পাদক",
+                event_title: "আমাদের কার্যক্রম", contact_title: "যোগাযোগ",
+                act_2: "খেলাধুলা", act_2_d: "বিনোদনের জন্য প্রতি মঙ্গলবার খেলাধুলা আয়োজন।",
+                act_4: "ট্যুর ও পিকনিক", act_4_d: "ইতালি ও ইতালির বাইরে ঘোরাফেরার আয়োজন।",
+                act_5: "অধিকার আদায়", act_5_d: "প্রবাসী অধিকার আদায়ে মিছিল ও আন্দোলন।",
+                contact_title: "যোগাযোগ এবং পরামর্শ",
+                form_head: "আমাদের একটি বার্তা পাঠান",
+                form_name: "আপনার নাম",
+                form_email: "আপনার ইমেইল",
+                form_msg: "পরামর্শ / বার্তা",
+                form_btn: "বার্তা পাঠান",
+                logo_top: "বাংলাদেশ যুব",
+                logo_sub: "কমিউনিটি ভেরোনা",
+            }
+        };
+
+        function setLang(lang) {
+            if(lang === 'bn') document.body.classList.add('lang-bn');
+            else document.body.classList.remove('lang-bn');
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if(langData[lang][key]) el.textContent = langData[lang][key];
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            document.getElementById('nav-menu').classList.remove('active');
+        }
+    </script>
+</body>
+</html>
