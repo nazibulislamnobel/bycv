@@ -265,6 +265,20 @@
             
             
         }
+        /* --- ADD THIS AT THE BOTTOM OF YOUR CSS --- */
+        
+        /* This makes the Main Logo bigger ONLY when Bengali is active */
+        body.lang-bn .logo {
+            font-size: 1.9rem; /* Increased from 1.4rem */
+        }
+
+        /* This adjusts the Sub-text (Community Verona) for Bengali */
+        body.lang-bn [data-i18n="logo_sub"] {
+            font-size: 0.75em !important; 
+            font-weight: 600;
+            line-height: 1.2;
+            margin-top: -5px; /* Pulls it up slightly closer */
+        }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
@@ -916,6 +930,7 @@
 </body>
 
 </html>
+
 
 
 
