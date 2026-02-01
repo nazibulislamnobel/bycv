@@ -265,21 +265,21 @@
             
             
         }
-        /* --- ADD THIS AT THE BOTTOM OF YOUR CSS --- */
         
-        /* This makes the Main Logo bigger ONLY when Bengali is active */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* --- BENGALI LOGO FIX --- */
+        /* When body has class 'lang-bn', make the logo much bigger */
         body.lang-bn .logo {
-            font-size: 1.9rem; /* Increased from 1.4rem */
+            font-size: 1.9rem; /* Default is 1.4rem, this makes it larger */
         }
 
-        /* This adjusts the Sub-text (Community Verona) for Bengali */
-        body.lang-bn [data-i18n="logo_sub"] {
-            font-size: 0.75em !important; 
-            font-weight: 600;
-            line-height: 1.2;
-            margin-top: -5px; /* Pulls it up slightly closer */
+        /* Adjust the sub-text (Community Verona) specifically for Bengali */
+        body.lang-bn .logo div[data-i18n="logo_sub"] {
+            font-size: 0.75em !important; /* Override the inline style to make it readable */
+            font-weight: 600; /* Make it slightly bolder */
+            margin-top: -5px; /* Pull it up slightly so it fits nicely */
         }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
@@ -764,6 +764,7 @@
         const langData = {
             en: {
                 nav_home: "Home", nav_services: "Services", nav_laws: "Laws", nav_team: "Teams", nav_events: "Activities", nav_contact: "Contact",
+                hero_estd: "Estd. 30 July 2024",
                 hero_title: "Unity. Service to Humanity. Rights.", hero_desc: "Our organization's activities are run with the own funding of the organization's leaders and members.",
                 btn_services: "Our Services", btn_join: "Join Group",
                 serv_title: "Organizational Services",
@@ -814,6 +815,7 @@
             },
             it: {
                 nav_home: "Home", nav_services: "Servizi", nav_laws: "Statuto", nav_team: "Squadra", nav_events: "attivita", nav_contact: "Contatti",
+                hero_estd: "Fondato 30 Luglio 2024",
                 hero_title: "Unità. Servizio. Diritti.", hero_desc: "Le attività della nostra organizzazione sono gestite con i finanziamenti propri dei dirigenti e dei membri dell'organizzazione.",
                 btn_services: "Servizi", btn_join: "Unisciti",
                 serv_title: "Servizi",
@@ -865,6 +867,7 @@
             },
             bn: {
                 nav_home: "হোম", nav_services: "সেবা", nav_laws: "সংবিধান", nav_team: "দল", nav_events: "কার্যক্রম", nav_contact: "যোগাযোগ",
+                hero_estd: "স্থাপিত: ৩০ জুলাই ২০২৪",
                 hero_title: "একতা। মানবসেবা। অধিকার।", hero_desc: "আমাদের সংগঠনটির কার্যক্রম পরিচালিত হয়, সংগঠনের নেতৃবৃন্দ এবং সদস্যদের নিজস্ব অর্থায়নে।",
                 btn_services: "আমাদের সেবা", btn_join: "যোগ দিন",
                 serv_title: "সাংগঠনিক সেবা",
@@ -930,6 +933,7 @@
 </body>
 
 </html>
+
 
 
 
