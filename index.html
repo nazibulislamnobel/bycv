@@ -309,9 +309,9 @@
                 <a href="#contact" class="nav-link" onclick="toggleMenu()" data-i18n="nav_contact">Contacts</a>
                 
                 <div class="lang-switch">
-                    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+                    <button class="lang-btn" onclick="setLang('en')">EN</button>
                     <button class="lang-btn" onclick="setLang('it')">IT</button>
-                    <button class="lang-btn" onclick="setLang('bn')">BN</button>
+                    <button class="lang-btn active" onclick="setLang('bn')">BN</button>
                 </div>
             </nav>
         </div>
@@ -929,19 +929,15 @@
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
             document.getElementById('nav-menu').classList.remove('active');
+            // Add this line inside setLang to make sure buttons update correctly
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            let buttons = document.querySelectorAll('.lang-btn');
+            if(lang === 'en') buttons[0].classList.add('active');
+            if(lang === 'it') buttons[1].classList.add('active');
+            if(lang === 'bn') buttons[2].classList.add('active');
         }
+        setLang('bn');
     </script>
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
