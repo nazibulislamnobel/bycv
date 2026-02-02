@@ -280,55 +280,6 @@
             font-weight: 600; /* Make it slightly bolder */
             margin-top: -5px; /* Pull it up slightly so it fits nicely */
         }
-        /* --- 1. GENERAL HEADER ALIGNMENT --- */
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-left: auto; /* Pushes group to the right */
-        }
-
-        /* Default (Desktop/Computer): Horizontal Row */
-        .lang-switch {
-            display: flex;
-            flex-direction: row; /* Side by side */
-            gap: 5px;
-            background: rgba(255,255,255,0.2);
-            padding: 4px;
-            border-radius: 20px;
-        }
-
-        /* --- 2. MOBILE ONLY (Vertical Stack) --- */
-        @media (max-width: 768px) {
-            
-            /* Reset Nav Margins */
-            .nav-menu { margin: 0; }
-
-            /* Change Language Buttons to Vertical Stack */
-            .lang-switch {
-                flex-direction: column; /* Stacks them Top to Bottom */
-                gap: 2px;               /* Tiny gap between buttons */
-                background: transparent;/* Remove background box */
-                padding: 0;
-                margin-right: 5px;      /* Space between buttons and Hamburger */
-            }
-
-            /* Style the Buttons specifically for the stack */
-            .lang-btn {
-                padding: 0 4px;         /* Very small padding */
-                font-size: 0.65rem;     /* Small text to fit height */
-                font-weight: 800;
-                line-height: 1.2;       /* Tighter lines */
-                border-radius: 4px;     /* Square corners look better in stack */
-                text-align: center;
-            }
-
-            /* Ensure hamburger is visible */
-            .mobile-toggle {
-                display: block;
-                font-size: 1.8rem;
-            }
-        }
     </style>
 </head>
 <body>
@@ -347,6 +298,8 @@
                 </div>
             </a>
 
+            <div class="mobile-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+
             <nav class="nav-menu" id="nav-menu">
                 <a href="#home" class="nav-link" onclick="toggleMenu()" data-i18n="nav_home">Home</a>
                 <a href="#services" class="nav-link" onclick="toggleMenu()" data-i18n="nav_services">Services</a>
@@ -354,19 +307,13 @@
                 <a href="#events" class="nav-link" onclick="toggleMenu()" data-i18n="nav_events">Activities</a>
                 <a href="#team" class="nav-link" onclick="toggleMenu()" data-i18n="nav_team">Teams</a>
                 <a href="#contact" class="nav-link" onclick="toggleMenu()" data-i18n="nav_contact">Contacts</a>
-            </nav>
-
-            <div class="header-right">
+                
                 <div class="lang-switch">
                     <button class="lang-btn active" onclick="setLang('en')">EN</button>
                     <button class="lang-btn" onclick="setLang('it')">IT</button>
                     <button class="lang-btn" onclick="setLang('bn')">BN</button>
                 </div>
-
-                <div class="mobile-toggle" onclick="toggleMenu()">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </div>
+            </nav>
         </div>
     </header>
 
