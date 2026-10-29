@@ -8,9 +8,9 @@
 
     <meta name="google-site-verification" content="4HvAqHRBxU09lLmGmS42LRmW0bwChvmL7GLUZxKmTP4" />
     
-    <meta name="description" content="Official website of Bangladesh Youth Community Verona (Verona BD). A platform for Verona probashi Bangladeshis. Free interpreter, jobs, and community help in Verona, Italy. ভেরোনা প্রবাসী বাংলাদেশীদের সংগঠন।">
+    <meta name="description" content="Official website of Bangladesh Youth Community Verona (Verona BD). A platform for Verona probashi Bangladeshis. Free interpreter, skill support, and community help in Verona, Italy.">
     
-    <meta name="keywords" content="Verona BD, Bangladeshi in Verona, Verona probashi, Bangladesh Youth Community Verona, Verona Italy Bangladeshi, ভেরোনা প্রবাসী বাংলাদেশ, ইতালি ভেরোনা খবর, Verona bangla community, BD community Verona, Bangladeshi association Italy">
+    <meta name="keywords" content="Verona BD, Bangladeshi in Verona, Verona probashi, Bangladesh Youth Community Verona, Verona Italy Bangladeshi, ভেরোনা প্রবাসী বাংলাদেশ, ইতালি ভেরোনা খবর, Verona bangla community">
     
     <meta name="author" content="Bangladesh Youth Community Verona">
     <meta name="robots" content="index, follow"> 
@@ -75,7 +75,7 @@
         .logo img { width: 90%; height: 90%; object-fit: contain; }
         header.scrolled .logo-img-wrapper { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
-        .nav-menu { display: flex; gap: 25px; list-style: none; align-items: center; }
+        .nav-menu { display: flex; gap: 20px; list-style: none; align-items: center; }
         .nav-link { 
             color: white; font-weight: 600; font-size: 0.95rem; position: relative; 
             text-shadow: 0 2px 5px rgba(0,0,0,0.3);
@@ -121,8 +121,8 @@
 
         /* --- 5. SERVICES & GENERAL SECTION STYLES --- */
         .section-padding { 
-            padding: 30px 0; 
-            scroll-margin-top: 100px; /* <--- THIS FIXES THE ISSUE */
+            padding: 50px 0; 
+            scroll-margin-top: 80px;
         }
         .section-header { text-align: center; margin-bottom: 50px; }
         .section-header h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 10px; }
@@ -278,23 +278,14 @@
             .hero h1 { font-size: 2.5rem; }
             .services-list { grid-template-columns: 1fr; }
             .contact-layout { grid-template-columns: 1fr; }
-            
-            
         }
         
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
         /* --- BENGALI LOGO FIX --- */
-        /* When body has class 'lang-bn', make the logo much bigger */
-        body.lang-bn .logo {
-            font-size: 2.1rem; /* Default is 1.4rem, this makes it larger */
-        }
-
-        /* Adjust the sub-text (Community Verona) specifically for Bengali */
+        body.lang-bn .logo { font-size: 2.1rem; }
         body.lang-bn .logo div[data-i18n="logo_sub"] {
-            font-size: 0.75em !important; /* Override the inline style to make it readable */
-            font-weight: 600; /* Make it slightly bolder */
-            margin-top: -5px; /* Pull it up slightly so it fits nicely */
+            font-size: 0.75em !important; font-weight: 600; margin-top: -5px; 
         }
     </style>
 </head>
@@ -318,10 +309,11 @@
 
             <nav class="nav-menu" id="nav-menu">
                 <a href="#home" class="nav-link" onclick="toggleMenu()" data-i18n="nav_home">Home</a>
+                <a href="#why" class="nav-link" onclick="toggleMenu()" data-i18n="nav_why">Join Us</a>
                 <a href="#services" class="nav-link" onclick="toggleMenu()" data-i18n="nav_services">Services</a>
+                <a href="#aps-activities" class="nav-link" onclick="toggleMenu()" data-i18n="nav_aps">APS Activities</a>
                 <a href="#laws" class="nav-link" onclick="toggleMenu()" data-i18n="nav_laws">Laws</a>
-                <a href="#events" class="nav-link" onclick="toggleMenu()" data-i18n="nav_events">Activities</a>
-                <a href="#team" class="nav-link" onclick="toggleMenu()" data-i18n="nav_team">Teams</a>
+                <a href="#gallery" class="nav-link" onclick="toggleMenu()" data-i18n="nav_gallery">Gallery</a>
                 <a href="#contact" class="nav-link" onclick="toggleMenu()" data-i18n="nav_contact">Contacts</a>
                 
                 <div class="lang-switch">
@@ -338,8 +330,8 @@
             <img src="images/hero-bg.jpg" alt="Background" onerror="this.style.display='none'">
         </div>
         <div class="hero-content">
-            <div style="margin-bottom: 20px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;" data-i18n="hero_estd">Estd. 30 July 2024</div>
-            <h1 data-i18n="hero_title">Unity. Service to Humanity. Rights.</h1>
+            <div style="margin-bottom: 20px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;" data-i18n="hero_estd">Associazione di Promozione Sociale (APS) | Estd. 2024</div>
+            <h1 data-i18n="hero_title">Unity. Service. Rights.</h1>
             <p data-i18n="hero_desc">Our organization's activities are run with the own funding of the organization's leaders and members.</p>
             <a href="#services" class="btn btn-primary" data-i18n="btn_services">Our Services</a>
             <a href="https://www.facebook.com/people/%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%A6%E0%A7%87%E0%A6%B6-%E0%A6%AF%E0%A7%81%E0%A6%AC-%E0%A6%AE%E0%A6%BF%E0%A6%89%E0%A6%A8%E0%A6%BF%E0%A6%9F%E0%A6%BF-%E0%A6%AD%E0%A7%87%E0%A6%B0%E0%A7%8B%E0%A6%A8%E0%A6%BE%E0%A6%87%E0%A6%A4%E0%A6%BE%E0%A6%B2%E0%A6%BF/61561360354384/" target="_blank" class="btn btn-fb">
@@ -353,6 +345,33 @@
         </div>
     </section>
 
+    <!-- NEW SECTION: Perché Associarsi / Why Join Us -->
+    <section class="section-padding" id="why" style="background: #fdfdfd;">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-i18n="why_title">Why Associate?</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="activity-grid">
+                <div class="activity-card">
+                    <div class="act-icon-box"><i class="fas fa-bullhorn"></i></div>
+                    <h3 data-i18n="why_1_t">More Strength & Voice</h3>
+                    <p data-i18n="why_1_d">Unite ideas to be heard and solve big problems together. Achieve real results for everyone.</p>
+                </div>
+                <div class="activity-card">
+                    <div class="act-icon-box"><i class="fas fa-hands-helping"></i></div>
+                    <h3 data-i18n="why_2_t">Help & Friendship</h3>
+                    <p data-i18n="why_2_d">Meet people with the same passions. Help those in need and never feel alone.</p>
+                </div>
+                <div class="activity-card">
+                    <div class="act-icon-box"><i class="fas fa-seedling"></i></div>
+                    <h3 data-i18n="why_3_t">Common Growth</h3>
+                    <p data-i18n="why_3_d">Learn new things working with others. Make our community a better place.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="section-padding" id="services">
         <div class="container">
             <div class="section-header">
@@ -363,7 +382,7 @@
                 <div>
                     <div class="service-item"><i class="fas fa-check-circle"></i><div><h4 data-i18n="serv_1_t">Free Interpretation</h4><p data-i18n="serv_1_d">Free interpreter/translator for official work.</p></div></div>
                     <div class="service-item"><i class="fas fa-check-circle"></i><div><h4 data-i18n="serv_2_t">Appointments</h4><p data-i18n="serv_2_d">Help getting official appointments.</p></div></div>
-                    <div class="service-item"><i class="fas fa-check-circle"></i><div><h4 data-i18n="serv_3_t">Job Search</h4><p data-i18n="serv_3_d">Finding jobs for Verona expat Bangladeshis.</p></div></div>
+                    <div class="service-item"><i class="fas fa-check-circle"></i><div><h4 data-i18n="serv_3_t">Skill Support & Training</h4><p data-i18n="serv_3_d">Training and support for skill development.</p></div></div>
                     <div class="service-item"><i class="fas fa-check-circle"></i><div><h4 data-i18n="serv_4_t">Accommodation</h4><p data-i18n="serv_4_d">Finding houses or seats for living.</p></div></div>
                     <div class="service-item"><i class="fas fa-check-circle"></i><div><h4 data-i18n="serv_5_t">Newcomers Help</h4><p data-i18n="serv_5_d">Helping new expat Bangladeshis settle in.</p></div></div>
                     <div class="service-item"><i class="fas fa-check-circle"></i><div><h4 data-i18n="serv_9_t">Information</h4><p data-i18n="serv_9_d">Search for a lawyer for any information and legal matters.</p></div></div>
@@ -372,27 +391,32 @@
         </div>
     </section>
 
-    <section class="section-padding" id="activities" style="background: #fdfdfd; position: relative;">
+    <section class="section-padding" id="aps-activities" style="background: #fdfdfd; position: relative;">
         <div class="container">
             <div class="section-header">
-                <h2 data-i18n="event_title">Our Activities</h2>
+                <h2 data-i18n="event_title">Official APS Activities</h2>
                 <div class="divider"></div>
             </div>
             <div class="activity-grid">
                 <div class="activity-card">
+                    <div class="act-icon-box"><i class="fas fa-palette"></i></div>
+                    <h3 data-i18n="act_1">Art & Culture</h3>
+                    <p data-i18n="act_1_d">Organization of exhibitions, shows, cineforums, and creative workshops.</p>
+                </div>
+                <div class="activity-card">
                     <div class="act-icon-box"><i class="fas fa-running"></i></div>
-                    <h3 data-i18n="act_2">Sports</h3>
-                    <p data-i18n="act_2_d">Arranged sports every Tuesday for recreation.</p>
+                    <h3 data-i18n="act_2">Sports & Recreation</h3>
+                    <p data-i18n="act_2_d">Facility management, tournaments, and promotion of psychophysical well-being.</p>
                 </div>
                 <div class="activity-card">
-                    <div class="act-icon-box"><i class="fas fa-plane-departure"></i></div>
-                    <h3 data-i18n="act_4">Tours & Picnics</h3>
-                    <p data-i18n="act_4_d">Arranging tours inside and outside Italy.</p>
+                    <div class="act-icon-box"><i class="fas fa-hands-helping"></i></div>
+                    <h3 data-i18n="act_3">Rights & Social Inclusion</h3>
+                    <p data-i18n="act_3_d">Assistance to disadvantaged groups, integration projects, and civil rights protection.</p>
                 </div>
                 <div class="activity-card">
-                    <div class="act-icon-box"><i class="fas fa-bullhorn"></i></div>
-                    <h3 data-i18n="act_5">Rights Movements</h3>
-                    <p data-i18n="act_5_d">Protests and movements for expatriate rights.</p>
+                    <div class="act-icon-box"><i class="fas fa-leaf"></i></div>
+                    <h3 data-i18n="act_4">Territorial Safeguarding</h3>
+                    <p data-i18n="act_4_d">Environmental education, heritage protection, and civil protection initiatives.</p>
                 </div>
             </div>
         </div>
@@ -401,27 +425,31 @@
     <section class="section-padding" id="laws" style="background: #f1f5f9;">
         <div class="container">
             <div class="section-header">
-                <h2 data-i18n="law_title">Constitution Highlights</h2>
+                <h2 data-i18n="law_title">Constitution Highlights (APS)</h2>
                 <div class="divider"></div>
             </div>
             <div class="accordion">
                 <div class="acc-item" onclick="toggleAcc(this)">
-                    <div class="acc-header"><span data-i18n="art_1_t">Identity</span><i class="fas fa-plus"></i></div>
-                    <div class="acc-body" data-i18n="art_1_d">Name: Bangladesh Youth Community Verona. Estd: 30 July 2024. Office: Verona City.</div>
+                    <div class="acc-header"><span data-i18n="art_1_t">Identity & Core Values</span><i class="fas fa-plus"></i></div>
+                    <div class="acc-body" data-i18n="art_1_d">Name: Bangladesh Youth Community Verona (APS). Core values: Nationalism, Secularism, Socialism, and Democracy.</div>
                 </div>
                 <div class="acc-item" onclick="toggleAcc(this)">
-                    <div class="acc-header"><span data-i18n="art_2_t">Principles</span><i class="fas fa-plus"></i></div>
-                    <div class="acc-body" data-i18n="art_2_d">To increase brotherhood, perform social welfare, preserve culture, and dignify the community.</div>
+                    <div class="acc-header"><span data-i18n="art_2_t">The 7 Cooperative Principles</span><i class="fas fa-plus"></i></div>
+                    <div class="acc-body" data-i18n="art_2_d">1. Open Membership 2. Democratic Control 3. Economic Participation 4. Autonomy 5. Education 6. Cooperation 7. Community Interest.</div>
                 </div>
                 <div class="acc-item" onclick="toggleAcc(this)">
-                    <div class="acc-header"><span data-i18n="art_3_t">Constitution</span><i class="fas fa-plus"></i></div>
-                    <div class="acc-body" data-i18n="art_3_d">To establish strong social bonds and a sense of brotherhood among all Bangladeshi youth living in Verona, Italy, regardless of religion, caste, tribe, and political ideology.</div>
+                    <div class="acc-header"><span data-i18n="art_fee_t">Membership Rights & Fees</span><i class="fas fa-plus"></i></div>
+                    <div class="acc-body" data-i18n="art_fee_d">The annual fee grants the right to vote, elect organs, view social books, and call assemblies (with 10% backing).</div>
+                </div>
+                <div class="acc-item" onclick="toggleAcc(this)">
+                    <div class="acc-header"><span data-i18n="art_pledge_t">Declaration of Commitment</span><i class="fas fa-plus"></i></div>
+                    <div class="acc-body" data-i18n="art_pledge_d">I promise to respect the rules, maintain unity, and collaborate for the common good without causing divisions.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section-padding" id="events" style="background: #fdfdfd;">
+    <section class="section-padding" id="gallery" style="background: #fdfdfd;">
         <div class="container">
             <div class="section-header">
                 <h2 style="color: #006A4E;" data-i18n="tour_title">Tours & Trips</h2>
@@ -473,7 +501,7 @@
                     </div>
                     </div>
                 <div class="gallery-item">
-                    <img src="images/act9.jpg" alt="Cerreto Tour" onerror="this.src='https://via.placeholder.com/400x300?text=Cerreto'">
+                    <img src="images/act9.jpg" alt="Braies Tour" onerror="this.src='https://via.placeholder.com/400x300?text=Lago+di+Braies'">
                     <div class="gallery-overlay">
                         <strong>June 30, 2026</strong><br>
                         Summer Trip: Lago di Braies
@@ -484,21 +512,20 @@
         </div>
     </section>
     
-        <section class="section-padding" style="background: #F8FAFC; text-align: center;">
+    <section class="section-padding" style="background: #F8FAFC; text-align: center;">
         <div class="container">
             <div style="background: linear-gradient(135deg, #F42A41 0%, #b31b2c 100%); padding: 40px 20px; border-radius: 15px; color: white; box-shadow: 0 10px 30px rgba(244, 42, 65, 0.2);">
                 <i class="fas fa-plane-departure" style="font-size: 2.5rem; margin-bottom: 15px; opacity: 0.9;"></i>
-                <h2 style="font-weight: 800; margin-bottom: 10px; font-size: 2rem;" data-i18n="ticket_title">আনন্দ ভ্রমণ</h2>
-                <p style="font-size: 1.1rem; margin-bottom: 25px; opacity: 0.9;" data-i18n="ticket_desc">আনন্দ ভ্রমণ ট্যুরের টিকিট ক্রয় করতে নিচে ক্লিক করুন।</p>
+                <h2 style="font-weight: 800; margin-bottom: 10px; font-size: 2rem;" data-i18n="ticket_title">Pleasure Trip Tickets</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 25px; opacity: 0.9;" data-i18n="ticket_desc">Click below to buy tickets for the upcoming pleasure trip.</p>
                 <a href="https://amarticket.netlify.app/" target="_blank" class="btn" style="background: white; color: #F42A41; padding: 15px 40px; font-size: 1.1rem; border-radius: 50px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    <i class="fas fa-ticket-alt"></i> <span data-i18n="btn_buy_ticket">টিকিট কিনুন</span>
+                    <i class="fas fa-ticket-alt"></i> <span data-i18n="btn_buy_ticket">Buy Ticket</span>
                 </a>
             </div>
         </div>
     </section>
 
-
-    <section class="section-padding" id="events" style="background: white;">
+    <section class="section-padding" id="community-events" style="background: white;">
         <div class="container">
             <div class="section-header">
                 <h2 style="color: #006A4E;" data-i18n="comm_event_title">Community Events</h2>
@@ -523,7 +550,7 @@
                     </a>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/iftar3.jpg" alt="Iftar 2025" onerror="this.src='https://via.placeholder.com/400x300?text=Iftar+2025'">
+                    <img src="images/iftar3.jpg" alt="Islamic Ed" onerror="this.src='https://via.placeholder.com/400x300?text=Islamic+Ed'">
                     <div class="gallery-overlay">
                         <strong>August 20, 2024</strong><br>
                         Free Islamic education program is ongoing
@@ -544,7 +571,7 @@
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/iftar 26.jpg" alt="Grill Party" onerror="this.src='https://via.placeholder.com/400x300?text=Grill+Party'">
+                    <img src="images/iftar 26.jpg" alt="Iftar 2026" onerror="this.src='https://via.placeholder.com/400x300?text=Iftar+2026'">
                     <div class="gallery-overlay">
                         <strong>March 10, 2026</strong><br>
                         Iftar Mahfil 3
@@ -581,23 +608,18 @@
     
     <section class="section-padding" id="humanitarian" style="background: #fdfdfd;">
         <div class="container">
-            
             <div class="section-header">
                 <h2 style="color: #006A4E;" data-i18n="human_title">Humanitarian Aid</h2>
                 <div class="divider"></div>
             </div>
 
             <div style="max-width: 800px; margin: 0 auto; background: white; padding: 25px 30px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-left: 5px solid #006A4E;">
-    
                 <p style="font-size: 1.05rem; line-height: 1.8; color: #475569; margin-bottom: 15px;" data-i18n="human_desc">
         On behalf of the <strong>Bangladesh Youth Community Verona, Italy</strong>, we have played an active role in humanitarian assistance in recent times. Notable initiatives include the formation of an emergency fund to support the flood-affected people of Noakhali in August 2024, providing financial assistance to repatriate deceased individuals to Bangladesh, and offering financial support for medical treatment.
                 </p>
-    
                 <p style="font-size: 1.1rem; font-weight: 700; color: #006A4E; margin: 0; font-style: italic;" data-i18n="human_quote">
         "Bangladesh Youth Community Verona, Italy, remains always committed to the welfare of humanity."
                 </p>
-
-            </div>
             </div>
         </div>
     </section>
@@ -685,18 +707,18 @@
             </div>
         </div>
     </section>
-     <section class="section-padding" style="background: linear-gradient(135deg, #006A4E 0%, #004d38 100%); color: white; text-align: center;">
-                    <div class="container">
-                        <h2 style="color: white; font-weight: 800; margin-bottom: 15px; font-size: 2.2rem;" data-i18n="form_banner_title">Join Our Community / Registration</h2>
-                        <p style="color: #e2e8f0; font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px;" data-i18n="form_banner_desc">
-                            Please fill out our official form for registration, membership, or participation in our upcoming activities.
-                        </p>
-                        <a href="https://forms.gle/jS3R8SwrieG49yzE8" target="_blank" class="btn" style="background: #F42A41; color: white; padding: 15px 40px; font-size: 1.1rem; box-shadow: 0 10px 20px rgba(244, 42, 65, 0.4); border-radius: 50px;">
-                            <i class="fas fa-wpforms" style="margin-right: 8px;"></i> <span data-i18n="btn_open_form">Open Google Form</span>
-                        </a>
-                    </div>
-                </section>
-        
+    
+    <section class="section-padding" style="background: linear-gradient(135deg, #006A4E 0%, #004d38 100%); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="color: white; font-weight: 800; margin-bottom: 15px; font-size: 2.2rem;" data-i18n="form_banner_title">Join Our Community / Registration</h2>
+            <p style="color: #e2e8f0; font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px;" data-i18n="form_banner_desc">
+                Please fill out our official form for registration, membership, or participation in our upcoming activities.
+            </p>
+            <a href="https://forms.gle/jS3R8SwrieG49yzE8" target="_blank" class="btn" style="background: #F42A41; color: white; padding: 15px 40px; font-size: 1.1rem; box-shadow: 0 10px 20px rgba(244, 42, 65, 0.4); border-radius: 50px;">
+                <i class="fas fa-wpforms" style="margin-right: 8px;"></i> <span data-i18n="btn_open_form">Open Google Form</span>
+            </a>
+        </div>
+    </section>
 
     <footer id="contact">
         <div class="container">
@@ -740,6 +762,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="container">
             <div class="section-header" style="margin-bottom: 50px;">
                 <div class="divider" style="background: rgba(255,255,255,0.3);"></div>
@@ -800,187 +823,159 @@
         
         // WhatsApp Function
         function sendToWhatsapp(e) {
-            e.preventDefault(); // Stops the page from reloading
-
-            // 1. Get Values
+            e.preventDefault(); 
             var name = document.getElementById('wa_name').value;
             var message = document.getElementById('wa_message').value;
-
-            // 2. President's Phone Number
             var phoneNumber = "393500225095"; 
-
-            // 3. Create the Message Text
-            var fullText = "*Name:* " + name + "\n" +
-                           "*Message:* " + message;
-                           
-            // 4. Open WhatsApp
+            var fullText = "*Name:* " + name + "\n*Message:* " + message;
             var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(fullText);
             window.open(url, '_blank');
         }
 
         const langData = {
             en: {
-                nav_home: "Home", nav_services: "Services", nav_laws: "Laws", nav_team: "Teams", nav_events: "Activities", nav_contact: "Contact",
-                hero_estd: "Estd. 30 July 2024",
-                hero_title: "Unity. Service to Humanity. Rights.", hero_desc: "Our organization's activities are run with the own funding of the organization's leaders and members.",
+                nav_home: "Home", nav_why: "Join Us", nav_services: "Services", nav_aps: "APS Activities", nav_laws: "Laws", nav_gallery: "Gallery", nav_contact: "Contact",
+                hero_estd: "Associazione di Promozione Sociale (APS) | Estd. 2024",
+                hero_title: "Unity. Service. Rights.", hero_desc: "Our organization's activities are run with the own funding of the organization's leaders and members.",
                 btn_services: "Our Services", btn_join: "Join Group",
+                
+                why_title: "Why Associate?", 
+                why_1_t: "More Strength & Voice", why_1_d: "Unite ideas to be heard and solve big problems together. Achieve real results for everyone.",
+                why_2_t: "Help & Friendship", why_2_d: "Meet people with the same passions. Help those in need and never feel alone.",
+                why_3_t: "Common Growth", why_3_d: "Learn new things working with others. Make our community a better place.",
+                
                 serv_title: "Organizational Services",
                 serv_1_t: "Interpretation", serv_1_d: "Free interpreter for official work.",
                 serv_2_t: "Appointments", serv_2_d: "Help getting official appointments.",
-                serv_3_t: "Job Search", serv_3_d: "Finding jobs for expat Bangladeshis.",
+                serv_3_t: "Skill Support", serv_3_d: "Training and support for skill development.",
                 serv_4_t: "Accommodation", serv_4_d: "Finding houses or seats.",
                 serv_5_t: "Newcomers", serv_5_d: "Helping new expats settle.",
                 serv_9_t: "Information", serv_9_d: "Search for a lawyer for any information and legal matters.",
-                law_title: "Constitution Highlights",
-                art_1_t: "Identity", art_1_d: "Name: Bangladesh Youth Community Verona. Estd: 30 July 2024. Office: Verona City.",
-                art_2_t: "Principles", art_2_d: "Social values, brotherhood, humanitarian aid, cooperation and performing public welfare work.",
-                art_3_t: "Constitution", art_3_d: "To establish strong social bonds and a sense of brotherhood among all Bangladeshi youth living in Verona, Italy, regardless of religion, caste, tribe, and political ideology.",
-                art_4_t: "Structure", art_4_d: "Executive Council (16 posts), Advisory, Honorary.",
-                art_5_t: "Duties", art_5_d: "President (Executive), GS (Admin), Treasurer (Finance).",
-                art_8_t: "Finance & Discipline", art_8_d: "Bank transactions. No politics.",
-                art_14_t: "Membership", art_14_d: "Fees 15th-20th. Attendance mandatory.",
-                art_15_t: "Article 15: Leadership", art_15_d: "Leadership change based on merit and democracy. Leaders must pay fees and maintain unity.",
-                team_title: "Executive Council", role_pres: "President", role_gs: "Gen. Secretary", role_org: "Org. Secretary",
-                event_title: "Our Activities", contact_title: "Contact Us",
-                act_2: "Sports", act_2_d: "Arranged sports every Tuesday for recreation.",
-                act_4: "Tours & Picnics", act_4_d: "Arranging tours inside and outside Italy.",
-                act_5: "Rights Movements", act_5_d: "Protests and movements for expatriate rights.",
-                contact_title: "Contact & Suggestions",
-                form_head: "Send us a Message",
-                form_name: "Your Name",
-                form_email: "Your Email",
-                form_msg: "Suggestion / Message",
-                form_btn: "Send Message",
-                logo_top: "BANGLADESH YOUTH",
-                logo_sub: "COMMUNITY VERONA",
+                
+                event_title: "Official APS Activities",
+                act_1: "Art & Culture", act_1_d: "Organization of exhibitions, shows, cineforums, and creative workshops.",
+                act_2: "Sports & Recreation", act_2_d: "Facility management, tournaments, and promotion of psychophysical well-being.",
+                act_3: "Rights & Social Inclusion", act_3_d: "Assistance to disadvantaged groups, integration projects, and civil rights protection.",
+                act_4: "Territorial Safeguarding", act_4_d: "Environmental education, heritage protection, and civil protection initiatives.",
+                
+                law_title: "Constitution Highlights (APS)",
+                art_1_t: "Identity & Core Values", art_1_d: "Name: Bangladesh Youth Community Verona (APS). Core values: Nationalism, Secularism, Socialism, and Democracy.",
+                art_2_t: "The 7 Cooperative Principles", art_2_d: "1. Open Membership 2. Democratic Control 3. Economic Participation 4. Autonomy 5. Education 6. Cooperation 7. Community Interest.",
+                art_fee_t: "Membership Rights & Fees", art_fee_d: "The annual fee grants the right to vote, elect organs, view social books, and call assemblies (with 10% backing).",
+                art_pledge_t: "Declaration of Commitment", art_pledge_d: "I promise to respect the rules, maintain unity, and collaborate for the common good without causing divisions.",
+                
                 tour_title: "Tours & Trips",
-                comm_event_title: "Community Events",
-                sport_team_title: "Our Sports Teams",
-                human_title: "Humanitarian Aid",
-                human_desc: "On behalf of the Bangladesh Youth Community Verona, Italy, we have played an active role in humanitarian assistance in recent times. Notable initiatives include the formation of an emergency fund to support the flood-affected people of Noakhali in August 2024, providing financial assistance to repatriate deceased individuals to Bangladesh, and offering financial support for medical treatment.",
+                ticket_title: "Pleasure Trip Tickets", ticket_desc: "Click below to buy tickets for the upcoming pleasure trip.", btn_buy_ticket: "Buy Ticket",
+                comm_event_title: "Community Events", sport_team_title: "Our Sports Teams",
+                
+                human_title: "Humanitarian Aid", human_desc: "On behalf of the Bangladesh Youth Community Verona, Italy, we have played an active role in humanitarian assistance in recent times. Notable initiatives include the formation of an emergency fund to support the flood-affected people of Noakhali in August 2024, providing financial assistance to repatriate deceased individuals to Bangladesh, and offering financial support for medical treatment.",
                 human_quote: "\"Bangladesh Youth Community Verona, Italy, remains always committed to the welfare of humanity.\"",
-                live_data_title: "Live Service Data",
-                live_data_desc: "A real-time transparency snapshot from our official records.",
-                btn_view_data: "View Services Data",
-                comm_mem_title: "Community Members",
-                comm_mem_desc: "The term of the Executive Committee is until July 30, 2026.",
-                btn_view_mem: "View Community Members",
-                init_found_title: "Initiative Founders",
-                init_found_desc: "Those whose tireless labor, financial cooperation, sacrifice, and time given amidst hundreds of busy schedules established this dream organization, 'Bangladesh Youth Community Verona, Italy'. Their names are highlighted here to keep them memorable for the next leadership and the next generation.",
-                btn_view_found: "View Initiative Founder Members",
-                btn_send_wa: "Send a message",
-                form_banner_title: "Join Our Community / Registration",
-                form_banner_desc: "Please fill out our official form for registration, membership, or participation in our upcoming activities.",
-                btn_open_form: "Open Google Form"
+                
+                live_data_title: "Live Service Data", live_data_desc: "A real-time transparency snapshot from our official records.", btn_view_data: "View Services Data",
+                comm_mem_title: "Community Members", comm_mem_desc: "The term of the Executive Committee is until July 30, 2026.", btn_view_mem: "View Community Members",
+                init_found_title: "Initiative Founders", init_found_desc: "Those whose tireless labor, financial cooperation, sacrifice, and time given amidst hundreds of busy schedules established this dream organization. Their names are highlighted here to keep them memorable for the next leadership.", btn_view_found: "View Initiative Founder Members",
+                
+                form_banner_title: "Join Our Community / Registration", form_banner_desc: "Please fill out our official form for registration, membership, or participation in our upcoming activities.", btn_open_form: "Open Google Form",
+                
+                team_title: "Executive Council", role_pres: "President", role_gs: "Gen. Secretary", role_org: "Org. Secretary",
+                form_head: "Send us a Message", form_name: "Your Name", form_msg: "Suggestion / Message", btn_send_wa: "Send a message",
+                logo_top: "BANGLADESH YOUTH", logo_sub: "COMMUNITY VERONA"
             },
             it: {
-                nav_home: "Home", nav_services: "Servizi", nav_laws: "Statuto", nav_team: "Squadra", nav_events: "attivita", nav_contact: "Contatti",
-                hero_estd: "Fondato 30 Luglio 2024",
-                hero_title: "Unità. Servizio. Diritti.", hero_desc: "Le attività della nostra organizzazione sono gestite con i finanziamenti propri dei dirigenti e dei membri dell'organizzazione.",
+                nav_home: "Home", nav_why: "Unisciti", nav_services: "Servizi", nav_aps: "Attività APS", nav_laws: "Statuto", nav_gallery: "Galleria", nav_contact: "Contatti",
+                hero_estd: "Associazione di Promozione Sociale (APS) | Fondato 2024",
+                hero_title: "Unità. Servizio. Diritti.", hero_desc: "Le attività della nostra organizzazione sono gestite con i finanziamenti propri dei dirigenti e dei membri.",
                 btn_services: "Servizi", btn_join: "Unisciti",
+                
+                why_title: "Perché Associarsi?",
+                why_1_t: "Più forza e voce", why_1_d: "Unire le idee per farsi ascoltare di più. Ottenere risultati reali per tutti.",
+                why_2_t: "Aiuto e amicizia", why_2_d: "Incontrare persone con le stesse passioni. Aiutare chi è in difficoltà vicino a noi.",
+                why_3_t: "Crescita comune", why_3_d: "Imparare cose nuove lavorando con gli altri. Rendere il proprio quartiere un posto migliore.",
+                
                 serv_title: "Servizi",
                 serv_1_t: "Interpretazione", serv_1_d: "Interprete gratuito per lavori ufficiali.",
-                serv_2_t: "Appuntamenti", serv_2_d: "Aiuto per appuntamenti.",
-                serv_3_t: "Lavoro", serv_3_d: "Ricerca lavoro per bangladesi.",
+                serv_2_t: "Appuntamenti", serv_2_d: "Aiuto per appuntamenti ufficiali.",
+                serv_3_t: "Formazione e Skill", serv_3_d: "Formazione e supporto alla costruzione delle skill.",
                 serv_4_t: "Alloggio", serv_4_d: "Trovare case o posti letto.",
-                serv_5_t: "Nuovi Arrivati", serv_5_d: "Aiuto nuovi espatriati.",
-                serv_9_t: "Informazioni", serv_9_d: "Cerca un avvocato per qualsiasi informazione e questione legale.",
-                law_title: "Punti Salienti Statuto",
-                art_1_t: "Identità", art_1_d: "Nome: Comunità Giovanile del Bangladesh Verona.",
-                art_2_t: "Principi", art_2_d: "Valori sociali, fratellanza, aiuto umanitario, cooperazione e svolgimento di attività di pubblica utilità.",
-                art_3_t: "Costituzione", art_3_d: "Creare forti legami sociali e un senso di fratellanza tra tutti i giovani bengalesi che vivono a Verona, in Italia, indipendentemente da religione, casta, tribù e ideologia politica.",
-                art_4_t: "AStruttura", art_4_d: "Consiglio Esecutivo (16 posti).",
-                art_5_t: "Doveri", art_5_d: "Presidente, Segretario.",
-                art_8_t: "Finanza", art_8_d: "Transazioni bancarie.",
-                art_14_t: "Iscrizione", art_14_d: "Quote 15-20 del mese.",
-                art_15_t: "Articolo 15: Leadership", art_15_d: "Cambio di leadership basato sul merito.",
-                team_title: "Consiglio Esecutivo", role_pres: "Presidente", role_gs: "Segretario", role_org: "Segretario Org.",
-                event_title: "Le Nostre Attività", contact_title: "Contattaci",
-                act_2: "Sport", act_2_d: "Organizzato ogni martedì.",
-                act_3: "Giornate Nazionali", act_3_d: "Celebrazione delle giornate nazionali del Bangladesh.",
-                act_4: "Tour e Picnic", act_4_d: "Organizzazione di tour dentro e fuori l'Italia.",
-                act_5: "Diritti", act_5_d: "Proteste e movimenti per i diritti degli espatriati.",
-                contact_title: "Contatti e Suggerimenti",
-                form_head: "Inviaci un messaggio",
-                form_name: "Il tuo nome",
-                form_email: "La tua email",
-                form_msg: "Suggerimento / Messaggio",
-                form_btn: "Invia Messaggio",
-                logo_top: "Comunità Giovanile del",
-                logo_sub: "Bangladesh Verona",
+                serv_5_t: "Nuovi Arrivati", serv_5_d: "Aiuto per l'integrazione di nuovi espatriati.",
+                serv_9_t: "Informazioni", serv_9_d: "Ricerca di un avvocato per informazioni legali.",
+                
+                event_title: "Attività Ufficiali APS",
+                act_1: "Promozione Culturale", act_1_d: "Organizzazione di mostre, spettacoli, cineforum e laboratori creativi.",
+                act_2: "Sport e Ricreazione", act_2_d: "Gestione di impianti, organizzazione di tornei e promozione del benessere psicofisico.",
+                act_3: "Diritti e Inclusione Sociale", act_3_d: "Assistenza a categorie svantaggiate, progetti di integrazione e tutela dei diritti civili.",
+                act_4: "Salvaguardia del Territorio", act_4_d: "Iniziative di educazione ambientale, tutela del patrimonio e protezione civile.",
+                
+                law_title: "Punti Salienti Statuto (APS)",
+                art_1_t: "Identità e Valori", art_1_d: "Nome: Comunità Giovanile del Bangladesh Verona (APS). Valori: Nazionalismo, Laicità, Socialismo e Democrazia.",
+                art_2_t: "I 7 Principi Cooperativi", art_2_d: "1. Adesione libera 2. Controllo democratico 3. Partecipazione economica 4. Autonomia 5. Educazione 6. Cooperazione 7. Interesse verso la comunità.",
+                art_fee_t: "Diritti e Quota Associativa", art_fee_d: "La quota annuale garantisce il diritto di votare, eleggere organi, visionare libri sociali e convocare assemblee (con il 10%).",
+                art_pledge_t: "Dichiarazione di Impegno", art_pledge_d: "Prometto di rispettare le regole, mantenere l'unità e collaborare per il bene comune senza creare divisioni.",
+                
                 tour_title: "Viaggi e Gite",
-                comm_event_title: "Eventi Comunitari",
-                sport_team_title: "Le Nostre Squadre Sportive",
-                human_title: "Aiuto Umanitario",
-                human_desc: "A nome della Comunità Giovanile del Bangladesh Verona, Italia, abbiamo svolto un ruolo attivo nell'assistenza umanitaria. Iniziative importanti includono un fondo di emergenza per Noakhali (agosto 2024), assistenza per il rimpatrio dei defunti e supporto finanziario per cure mediche.",
+                ticket_title: "Biglietti Viaggio", ticket_desc: "Clicca qui sotto per acquistare i biglietti per il prossimo viaggio di piacere.", btn_buy_ticket: "Acquista Biglietto",
+                comm_event_title: "Eventi Comunitari", sport_team_title: "Le Nostre Squadre Sportive",
+                
+                human_title: "Aiuto Umanitario", human_desc: "A nome della Comunità Giovanile del Bangladesh Verona, abbiamo svolto un ruolo attivo nell'assistenza umanitaria. Iniziative importanti includono un fondo di emergenza per Noakhali (agosto 2024), assistenza per il rimpatrio dei defunti e supporto per cure mediche.",
                 human_quote: "\"La Comunità Giovanile del Bangladesh Verona, Italia, rimane sempre impegnata per il benessere dell'umanità.\"",
-                live_data_title: "Dati Servizi Live",
-                live_data_desc: "Un'istantanea di trasparenza in tempo reale dai nostri registri ufficiali.",
-                btn_view_data: "Visualizza Dati",
-                comm_mem_title: "Membri della Comunità",
-                comm_mem_desc: "Il mandato del Comitato Esecutivo è fino al 30 luglio 2026.",
-                btn_view_mem: "Visualizza Membri",
-                init_found_title: "Fondatori dell'Iniziativa",
-                init_found_desc: "Coloro il cui instancabile lavoro, cooperazione finanziaria, sacrificio e tempo dedicato nonostante i numerosi impegni hanno fondato questa organizzazione dei sogni, 'Comunità Giovanile del Bangladesh Verona, Italia'. I loro nomi sono evidenziati qui per ricordarli alla prossima leadership e alla prossima generazione.",
-                btn_view_found: "Visualizza Fondatori",
-                btn_send_wa: "Manda un messaggio",
-                form_banner_title: "Unisciti alla nostra Comunità / Registrazione",
-                form_banner_desc: "Si prega di compilare il nostro modulo ufficiale per la registrazione, l'adesione o la partecipazione alle nostre prossime attività.",
-                btn_open_form: "Apri Modulo Google"
+                
+                live_data_title: "Dati Servizi Live", live_data_desc: "Un'istantanea di trasparenza in tempo reale dai nostri registri ufficiali.", btn_view_data: "Visualizza Dati",
+                comm_mem_title: "Membri della Comunità", comm_mem_desc: "Il mandato del Comitato Esecutivo è fino al 30 luglio 2026.", btn_view_mem: "Visualizza Membri",
+                init_found_title: "Fondatori dell'Iniziativa", init_found_desc: "Coloro il cui instancabile lavoro e sacrificio hanno fondato questa organizzazione dei sogni. I loro nomi sono evidenziati qui per ricordarli alla prossima generazione.", btn_view_found: "Visualizza Fondatori",
+                
+                form_banner_title: "Unisciti alla nostra Comunità", form_banner_desc: "Si prega di compilare il nostro modulo ufficiale per la registrazione o la partecipazione alle attività.", btn_open_form: "Apri Modulo Google",
+                
+                team_title: "Consiglio Esecutivo", role_pres: "Presidente", role_gs: "Segretario Generale", role_org: "Segretario Org.",
+                form_head: "Inviaci un messaggio", form_name: "Il tuo nome", form_msg: "Suggerimento / Messaggio", btn_send_wa: "Manda un messaggio",
+                logo_top: "Comunità Giovanile del", logo_sub: "Bangladesh Verona"
             },
             bn: {
-                nav_home: "হোম", nav_services: "সেবা", nav_laws: "সংবিধান", nav_team: "দল", nav_events: "কার্যক্রম", nav_contact: "যোগাযোগ",
-                hero_estd: "স্থাপিত: ৩০ জুলাই ২০২৪",
-                hero_title: "একতা। মানবসেবা। অধিকার।", hero_desc: "আমাদের সংগঠনটির কার্যক্রম পরিচালিত হয়, সংগঠনের নেতৃবৃন্দ এবং সদস্যদের নিজস্ব অর্থায়নে।",
+                nav_home: "হোম", nav_why: "যোগ দিন", nav_services: "সেবা", nav_aps: "APS কার্যক্রম", nav_laws: "সংবিধান", nav_gallery: "গ্যালারি", nav_contact: "যোগাযোগ",
+                hero_estd: "Associazione di Promozione Sociale (APS) | স্থাপিত: ২০২৪",
+                hero_title: "একতা। মানবসেবা। অধিকার।", hero_desc: "আমাদের সংগঠনটির কার্যক্রম পরিচালিত হয় নিজস্ব অর্থায়নে।",
                 btn_services: "আমাদের সেবা", btn_join: "যোগ দিন",
+                
+                why_title: "কেন যুক্ত হবেন?",
+                why_1_t: "অধিক শক্তি ও কণ্ঠস্বর", why_1_d: "আমাদের ধারণাগুলোকে একত্রিত করে বড় সমস্যার সমাধান করা।",
+                why_2_t: "সাহায্য ও বন্ধুত্ব", why_2_d: "একই মনোভাবাপন্ন মানুষের সাথে পরিচিত হওয়া এবং একে অপরকে সাহায্য করা।",
+                why_3_t: "যৌথ উন্নয়ন", why_3_d: "নতুন কিছু শেখা এবং আমাদের সমাজকে আরও উন্নত করা।",
+                
                 serv_title: "সাংগঠনিক সেবা",
                 serv_1_t: "দোভাষী", serv_1_d: "বিনামূল্যে দোভাষী সুবিধা।",
                 serv_2_t: "অ্যাপয়েন্টমেন্ট", serv_2_d: "অফিসিয়াল Appointment সাহায্য।",
-                serv_3_t: "কাজের সন্ধান", serv_3_d: "বাংলাদেশিদের জন্য কাজের সন্ধান।",
+                serv_3_t: "দক্ষতা উন্নয়ন", serv_3_d: "দক্ষতা বৃদ্ধি এবং প্রশিক্ষণের জন্য সহায়তা।",
                 serv_4_t: "বাসস্থান", serv_4_d: "বাসা বা সিটের সন্ধান।",
                 serv_5_t: "নতুন প্রবাসী", serv_5_d: "নতুন প্রবাসীদের সাহায্য।",
-                serv_9_t: "তথ্য", serv_9_d: "যেকোনো তথ্য ও আইন বিষয় উকিলের সন্ধান।",
-                law_title: "সংবিধানের প্রধান বিষয়",
-                art_1_t: "পরিচয়", art_1_d: "নাম: বাংলাদেশ যুব কমিউনিটি ভেরোনা।",
-                art_2_t: "মূলনীতি", art_2_d: "সামাজিক মূল্যবোধ, ভ্রাতৃত্ব, মানবিক সহায়তা, সহযোগিতা এবং জনকল্যাণ মূলক কাজ সম্পাদন।",
-                art_3_t: "গঠনতন্ত্র", art_3_d: "ইতালির ভেরোনায় বসবাসরত সকল বাংলাদেশী যুবদের মধ্যে ধর্ম, বর্ণ, গোত্র ও রাজনৈতিক মতাদর্শ নির্বিশেষে সুদৃঢ় সামাজিক বন্ধন ও ভ্রাতৃত্ববোধ প্রতিষ্ঠা করা।",
-                art_4_t: "কাঠামো", art_4_d: "কার্যকরী পরিষদ (১৬ পদ)।",
-                art_5_t: "দায়িত্ব", art_5_d: "সভাপতি, সাধারণ সম্পাদক।",
-                art_8_t: "অর্থ ও শৃঙ্খলা", art_8_d: "ব্যাংক লেনদেন।",
-                art_14_t: "সদস্যপদ", art_14_d: "ফি ১৫-২০ তারিখ।",
-                art_15_t: "অনুচ্ছেদ ১৫: নেতৃত্ব", art_15_d: "মেধার ভিত্তিতে নেতৃত্ব পরিবর্তন।",
-                team_title: "কার্যকরী পরিষদ", role_pres: "সভাপতি", role_gs: "সাধারণ সম্পাদক", role_org: "সাংগঠনিক সম্পাদক",
-                event_title: "আমাদের কার্যক্রম", contact_title: "যোগাযোগ",
-                act_2: "খেলাধুলা", act_2_d: "বিনোদনের জন্য প্রতি মঙ্গলবার খেলাধুলা আয়োজন।",
-                act_4: "ট্যুর ও পিকনিক", act_4_d: "ইতালি ও ইতালির বাইরে ঘোরাফেরার আয়োজন।",
-                act_5: "অধিকার আদায়", act_5_d: "প্রবাসী অধিকার আদায়ে মিছিল ও আন্দোলন।",
-                contact_title: "যোগাযোগ এবং পরামর্শ",
-                form_head: "আমাদের একটি বার্তা পাঠান",
-                form_name: "আপনার নাম",
-                form_email: "আপনার ইমেইল",
-                form_msg: "পরামর্শ / বার্তা",
-                form_btn: "বার্তা পাঠান",
-                logo_top: "বাংলাদেশ যুব",
-                logo_sub: "কমিউনিটি ভেরোনা",
+                serv_9_t: "তথ্য", serv_9_d: "যেকোনো আইনি বিষয়ে সহায়তার জন্য উকিলের সন্ধান।",
+                
+                event_title: "অফিসিয়াল APS কার্যক্রম",
+                act_1: "শিল্প ও সংস্কৃতি", act_1_d: "প্রদর্শনী, শো, সিনেমা ফোরাম এবং সৃজনশীল কর্মশালার আয়োজন।",
+                act_2: "খেলাধুলা ও বিনোদন", act_2_d: "সুযোগ-সুবিধা পরিচালনা, টুর্নামেন্ট আয়োজন এবং শারীরিক ও মানসিক সুস্থতার প্রচার।",
+                act_3: "অধিকার ও সামাজিক অন্তর্ভুক্তি", act_3_d: "সুবিধাবঞ্চিতদের সহায়তা, একীকরণ প্রকল্প এবং নাগরিক অধিকার সুরক্ষা।",
+                act_4: "পরিবেশ ও অঞ্চল রক্ষা", act_4_d: "পরিবেশগত শিক্ষা, ঐতিহ্য রক্ষা এবং নাগরিক সুরক্ষা উদ্যোগ।",
+                
+                law_title: "সংবিধানের প্রধান বিষয় (APS)",
+                art_1_t: "পরিচয় এবং মূলনীতি", art_1_d: "নাম: বাংলাদেশ যুব কমিউনিটি ভেরোনা (APS)। মূলনীতি: জাতীয়তাবাদ, ধর্মনিরপেক্ষতা, সমাজতন্ত্র এবং গণতন্ত্র।",
+                art_2_t: "৭টি সমবায় নীতি", art_2_d: "১. উন্মুক্ত সদস্যপদ ২. গণতান্ত্রিক নিয়ন্ত্রণ ৩. অর্থনৈতিক অংশগ্রহণ ৪. স্বায়ত্তশাসন ৫. শিক্ষা ৬. সহযোগিতা ৭. সম্প্রদায়ের স্বার্থ।",
+                art_fee_t: "সদস্য অধিকার ও চাঁদা", art_fee_d: "বার্ষিক চাঁদা ভোটদান, কার্যকরী পরিষদ নির্বাচন, সামাজিক বই দেখা এবং সমাবেশ ডাকার (১০% সমর্থন সহ) অধিকার প্রদান করে।",
+                art_pledge_t: "অঙ্গীকারনামা", art_pledge_d: "আমি নিয়ম মেনে চলার, একতা বজায় রাখার এবং বিভেদ সৃষ্টি না করে সাধারণ কল্যাণে কাজ করার প্রতিশ্রুতি দিচ্ছি।",
+                
                 tour_title: "ট্যুর ও ভ্রমণ",
-                comm_event_title: "কমিউনিটি ইভেন্ট",
-                sport_team_title: "আমাদের স্পোর্টস টিম",
-                human_title: "মানবিক সহায়তা",
-                human_desc: "বাংলাদেশ যুব কমিউনিটি ভেরোনা, ইতালির পক্ষ থেকে সাম্প্রতিক সময়ে মানবিক সহায়তায় আমরা সক্রিয় ভূমিকা পালন করেছি। এর মধ্যে উল্লেখযোগ্য হলো ২০২৪ সালের আগস্ট মাসে নোয়াখালীর বন্যাদুর্গত মানুষের পাশে দাঁড়াতে জরুরি তহবিল গঠন, মৃত প্রবাসীদের দেশে পাঠাতে আর্থিক সহযোগিতা এবং চিকিৎসায় অর্থ সহায়তা প্রদান।",
+                ticket_title: "আনন্দ ভ্রমণ", ticket_desc: "আনন্দ ভ্রমণ ট্যুরের টিকিট ক্রয় করতে নিচে ক্লিক করুন।", btn_buy_ticket: "টিকিট কিনুন",
+                comm_event_title: "কমিউনিটি ইভেন্ট", sport_team_title: "আমাদের স্পোর্টস টিম",
+                
+                human_title: "মানবিক সহায়তা", human_desc: "বাংলাদেশ যুব কমিউনিটি ভেরোনা, ইতালির পক্ষ থেকে সাম্প্রতিক সময়ে মানবিক সহায়তায় আমরা সক্রিয় ভূমিকা পালন করেছি। এর মধ্যে উল্লেখযোগ্য হলো ২০২৪ সালের আগস্ট মাসে নোয়াখালীর বন্যাদুর্গত মানুষের পাশে দাঁড়াতে জরুরি তহবিল গঠন, মৃত প্রবাসীদের দেশে পাঠাতে আর্থিক সহযোগিতা এবং চিকিৎসায় অর্থ সহায়তা প্রদান।",
                 human_quote: "\"বাংলাদেশ যুব কমিউনিটি ভেরোনা,ইতালি মানবতার কল্যানে সর্বদা অঙ্গিকারবদ্ধ।\"",
-                live_data_title: "লাইভ সার্ভিস ডেটা",
-                live_data_desc: "আমাদের অফিশিয়াল রেকর্ড থেকে একটি রিয়েল-টাইম স্বচ্ছ চিত্র।",
-                btn_view_data: "সেবা তালিকা দেখুন",
-                comm_mem_title: "কমিউনিটি সদস্যবৃন্দ",
-                comm_mem_desc: "কার্যকরী পরিষদের মেয়াদ ৩০ জুলাই ২০২৬ পর্যন্ত।",
-                btn_view_mem: "সদস্য তালিকা দেখুন",
-                init_found_title: "উদ্যোক্তা ও প্রতিষ্ঠাতা",
-                init_found_desc: "আজকের \"বাংলাদেশ যুব কমিউনিটি ভেরোনা,ইতালি\" যাঁদের অক্লান্ত শ্রম, অর্থ সহযোগিতা, ত্যাগ, শত কর্মব্যস্ততার মাঝেও সময় দিয়ে এই স্বপ্নের সংগঠন প্রতিষ্ঠা করা হয়েছে। পরবর্তী নেতৃত্ব এবং পরবর্তী প্রজন্মের কাছে স্মরণীয় করে রাখতে তাদের নাম তুলে ধরা হলো।",
-                btn_view_found: "উদ্যোক্তা সদস্যদের তালিকা দেখুন",
-                btn_send_wa: "বার্তা পাঠান",
-                form_banner_title: "আমাদের সংগঠনের সাথে কাজ করতে আগ্রহী হলে সদস্য ফর্মটি পূরণ করুন।",
-                form_banner_desc: "সংগঠনের সদস্যপদ, রেজিস্ট্রেশন বা আমাদের আগামী কার্যক্রমে অংশগ্রহণের জন্য অনুগ্রহ করে অফিশিয়াল ফর্মটি পূরণ করুন।",
-                btn_open_form: "গুগল ফর্মটি পূরণ করুন"
+                
+                live_data_title: "লাইভ সার্ভিস ডেটা", live_data_desc: "আমাদের অফিশিয়াল রেকর্ড থেকে একটি রিয়েল-টাইম স্বচ্ছ চিত্র।", btn_view_data: "সেবা তালিকা দেখুন",
+                comm_mem_title: "কমিউনিটি সদস্যবৃন্দ", comm_mem_desc: "কার্যকরী পরিষদের মেয়াদ ৩০ জুলাই ২০২৬ পর্যন্ত।", btn_view_mem: "সদস্য তালিকা দেখুন",
+                init_found_title: "উদ্যোক্তা ও প্রতিষ্ঠাতা", init_found_desc: "আজকের \"বাংলাদেশ যুব কমিউনিটি ভেরোনা,ইতালি\" যাঁদের অক্লান্ত শ্রম, ত্যাগ, শত কর্মব্যস্ততার মাঝেও সময় দিয়ে এই স্বপ্নের সংগঠন প্রতিষ্ঠা করা হয়েছে। পরবর্তী প্রজন্মের কাছে স্মরণীয় করে রাখতে তাদের নাম তুলে ধরা হলো।", btn_view_found: "উদ্যোক্তা সদস্যদের তালিকা দেখুন",
+                
+                form_banner_title: "সদস্য ফর্মটি পূরণ করুন", form_banner_desc: "সংগঠনের সদস্যপদ, রেজিস্ট্রেশন বা আমাদের আগামী কার্যক্রমে অংশগ্রহণের জন্য অনুগ্রহ করে অফিশিয়াল ফর্মটি পূরণ করুন।", btn_open_form: "গুগল ফর্মটি পূরণ করুন",
+                
+                team_title: "কার্যকরী পরিষদ", role_pres: "সভাপতি", role_gs: "সাধারণ সম্পাদক", role_org: "সাংগঠনিক সম্পাদক",
+                form_head: "আমাদের একটি বার্তা পাঠান", form_name: "আপনার নাম", form_msg: "পরামর্শ / বার্তা", btn_send_wa: "বার্তা পাঠান",
+                logo_top: "বাংলাদেশ যুব", logo_sub: "কমিউনিটি ভেরোনা"
             }
         };
 
@@ -992,24 +987,13 @@
                 if(langData[lang][key]) el.textContent = langData[lang][key];
             });
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            document.getElementById('nav-menu').classList.remove('active');
-            // Add this line inside setLang to make sure buttons update correctly
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             let buttons = document.querySelectorAll('.lang-btn');
             if(lang === 'en') buttons[0].classList.add('active');
             if(lang === 'it') buttons[1].classList.add('active');
             if(lang === 'bn') buttons[2].classList.add('active');
+            document.getElementById('nav-menu').classList.remove('active');
         }
         setLang('it');
     </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
